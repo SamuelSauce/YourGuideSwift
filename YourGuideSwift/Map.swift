@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate {
     
   
     @IBOutlet weak var mapView: MKMapView!
@@ -48,6 +48,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.navigationController?.navigationBar.isHidden = true
+        
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             mapView.showsUserLocation = true
         } else {
@@ -55,19 +57,21 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         }
     }
     
+    
+    
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         guard status == .authorizedWhenInUse else { print("not enabled"); return }
         mapView.showsUserLocation = true
     }
-
-
-    
     
     //VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
+        
+        self.navigationController?.navigationBar.isHidden = true
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -76,6 +80,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         tabBarController?.tabBar.barTintColor = UIColor.white
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        
         
         locationManager.delegate = self
         

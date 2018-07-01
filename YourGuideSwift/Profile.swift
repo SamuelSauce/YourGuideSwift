@@ -8,11 +8,28 @@
 
 import UIKit
 
-class Profile: UIViewController {
+class Profile: UIViewController, UINavigationControllerDelegate {
 
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        self.navigationController?.navigationBar.isHidden = true
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationController?.navigationBar.isHidden = false
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+       
+
+        
+        navigationItem.title = "Profile"
+        
     }
     @IBOutlet weak var BackgroundImage: UIImageView!
     @IBOutlet weak var ProfileImage: UIImageView!
