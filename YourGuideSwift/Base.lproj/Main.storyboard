@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Ts-PL-cP4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,39 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
-        <scene sceneID="hNz-n2-bh7">
-            <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="YourGuideSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Map View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="112" y="312" width="151.5" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="first" id="acW-dT-cKf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="YourGuideSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="Profile" customModule="YourGuideSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,36 +31,83 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="second" id="cPa-gy-q4n"/>
-                    <connections>
-                        <outlet property="BackgroundImage" destination="7q7-0h-cM0" id="xIL-xg-14Z"/>
-                        <outlet property="ProfileImage" destination="xbs-o7-nSp" id="fnc-m1-iPN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+            <point key="canvasLocation" x="1146" y="-866"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
+        <!--Item-->
+        <scene sceneID="6tC-GH-1Ov">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
+                <viewController id="5Ts-PL-cP4" customClass="Map" customModule="YourGuideSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fyI-aZ-dod"/>
+                        <viewControllerLayoutGuide type="bottom" id="VpJ-01-ynS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B9c-WD-ZPj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOp-he-4Hk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5Ts-PL-cP4" id="88r-1h-Yf0"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wb-bo-W78">
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="TE9-mX-cwu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Find a Guide">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFc-Je-IZ6">
+                                <rect key="frame" x="291" y="28" width="84" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="mFl-X0-5QD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" image="profile"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="HFc-Je-IZ6" firstAttribute="top" secondItem="fyI-aZ-dod" secondAttribute="bottom" constant="8" symbolic="YES" id="Bnq-un-qHs"/>
+                            <constraint firstItem="2Wb-bo-W78" firstAttribute="trailing" secondItem="HQ4-NY-4Kw" secondAttribute="trailing" id="Fgy-aA-85h"/>
+                            <constraint firstItem="2Wb-bo-W78" firstAttribute="top" secondItem="EOp-he-4Hk" secondAttribute="bottom" constant="-1" id="GVv-yN-8jJ"/>
+                            <constraint firstItem="EOp-he-4Hk" firstAttribute="leading" secondItem="HQ4-NY-4Kw" secondAttribute="leading" id="LFQ-dj-3nf"/>
+                            <constraint firstItem="HFc-Je-IZ6" firstAttribute="leading" secondItem="HQ4-NY-4Kw" secondAttribute="leading" constant="291" id="MCL-RU-jR3"/>
+                            <constraint firstItem="EOp-he-4Hk" firstAttribute="top" secondItem="B9c-WD-ZPj" secondAttribute="top" id="Mhd-uy-XOa"/>
+                            <constraint firstItem="2Wb-bo-W78" firstAttribute="leading" secondItem="HQ4-NY-4Kw" secondAttribute="leading" id="Uuj-2S-SAe"/>
+                            <constraint firstItem="EOp-he-4Hk" firstAttribute="trailing" secondItem="HQ4-NY-4Kw" secondAttribute="trailing" id="ZzQ-os-GuH"/>
+                            <constraint firstItem="VpJ-01-ynS" firstAttribute="top" secondItem="2Wb-bo-W78" secondAttribute="bottom" id="gGh-jR-YsL"/>
+                            <constraint firstItem="HFc-Je-IZ6" firstAttribute="trailing" secondItem="EOp-he-4Hk" secondAttribute="trailing" id="lqa-Qt-6c9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HQ4-NY-4Kw"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="J7A-SP-P6H"/>
+                    <navigationItem key="navigationItem" id="rCv-Hw-fSf"/>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <outlet property="mapView" destination="EOp-he-4Hk" id="wQm-GR-VmQ"/>
+                        <outlet property="profileButton" destination="HFc-Je-IZ6" id="KV4-Se-tmO"/>
+                        <segue destination="8rJ-Kc-sve" kind="show" identifier="toProfile" id="PHn-BU-IKR"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2MM-DI-zx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController searchResultsTitle="" id="kO0-DQ-O6X" customClass="SearchTrends" customModule="Second_Flock_Mobile_App" customModuleProvider="target"/>
+                <searchDisplayController id="w8K-pc-OXE" customClass="TrendsSearchDisplayer" customModule="Second_Flock_Mobile_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-599.20000000000005" y="-867.61619190404804"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="profile" width="25" height="25"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
