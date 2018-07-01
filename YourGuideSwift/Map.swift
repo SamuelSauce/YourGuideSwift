@@ -15,6 +15,9 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var profileButton: UIButton!
     
+    @IBAction func ToProfile(_ sender: Any) {
+        performSegue(withIdentifier: "toProfile", sender: self)
+    }
     let locationManager = CLLocationManager()
     
     // Authors View Controller
@@ -52,7 +55,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         guard status == .authorizedWhenInUse else { print("not enabled"); return }
         mapView.showsUserLocation = true
     }

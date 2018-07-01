@@ -73,6 +73,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" image="profile"/>
+                                <connections>
+                                    <action selector="ToProfile:" destination="5Ts-PL-cP4" eventType="touchUpInside" id="LQZ-xu-9va"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,8 +103,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2MM-DI-zx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController searchResultsTitle="" id="kO0-DQ-O6X" customClass="SearchTrends" customModule="Second_Flock_Mobile_App" customModuleProvider="target"/>
-                <searchDisplayController id="w8K-pc-OXE" customClass="TrendsSearchDisplayer" customModule="Second_Flock_Mobile_App" customModuleProvider="target"/>
+                <searchDisplayController searchResultsTitle="" id="kO0-DQ-O6X" customClass="SearchTrends" customModule="YourGuideSwift" customModuleProvider="target"/>
+                <searchDisplayController id="w8K-pc-OXE" customClass="TrendsSearchDisplayer" customModule="YourGuideSwift" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-599.20000000000005" y="-867.61619190404804"/>
         </scene>
