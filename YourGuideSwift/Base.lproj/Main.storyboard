@@ -234,6 +234,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="HFc-Je-IZ6" firstAttribute="top" secondItem="fyI-aZ-dod" secondAttribute="bottom" constant="8" symbolic="YES" id="Bnq-un-qHs"/>
+                            <constraint firstAttribute="bottom" secondItem="2Wb-bo-W78" secondAttribute="bottom" id="DfY-JR-miZ"/>
                             <constraint firstItem="2Wb-bo-W78" firstAttribute="trailing" secondItem="HQ4-NY-4Kw" secondAttribute="trailing" id="Fgy-aA-85h"/>
                             <constraint firstItem="2Wb-bo-W78" firstAttribute="top" secondItem="EOp-he-4Hk" secondAttribute="bottom" constant="-1" id="GVv-yN-8jJ"/>
                             <constraint firstItem="EOp-he-4Hk" firstAttribute="leading" secondItem="HQ4-NY-4Kw" secondAttribute="leading" id="LFQ-dj-3nf"/>
@@ -241,7 +242,6 @@
                             <constraint firstItem="EOp-he-4Hk" firstAttribute="top" secondItem="B9c-WD-ZPj" secondAttribute="top" id="Mhd-uy-XOa"/>
                             <constraint firstItem="2Wb-bo-W78" firstAttribute="leading" secondItem="HQ4-NY-4Kw" secondAttribute="leading" id="Uuj-2S-SAe"/>
                             <constraint firstItem="EOp-he-4Hk" firstAttribute="trailing" secondItem="HQ4-NY-4Kw" secondAttribute="trailing" id="ZzQ-os-GuH"/>
-                            <constraint firstItem="VpJ-01-ynS" firstAttribute="top" secondItem="2Wb-bo-W78" secondAttribute="bottom" id="gGh-jR-YsL"/>
                             <constraint firstItem="HFc-Je-IZ6" firstAttribute="trailing" secondItem="EOp-he-4Hk" secondAttribute="trailing" id="lqa-Qt-6c9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HQ4-NY-4Kw"/>

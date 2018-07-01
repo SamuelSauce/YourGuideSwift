@@ -23,11 +23,6 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     // Authors View Controller
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        
-        // Initialize Tab Bar Item
-        tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "mtn"), tag: 0)
-        
    
         //this sets up highlight for tab bar items, initially black text, when selected blue for now, can change later
         //UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.black], for:.normal)
