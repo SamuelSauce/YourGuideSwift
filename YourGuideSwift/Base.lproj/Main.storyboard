@@ -208,7 +208,7 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wb-bo-W78">
                                 <rect key="frame" x="0.0" y="597" width="375" height="70"/>
-                                <color key="backgroundColor" red="0.02292308237" green="0.72549019609999998" blue="0.70574786599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="TE9-mX-cwu"/>
                                 </constraints>
