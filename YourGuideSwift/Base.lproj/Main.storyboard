@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background image" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-Pr-qP0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="175"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="219"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="Uck-2w-cwm">
                                 <rect key="frame" x="130" y="168" width="115" height="115"/>
@@ -159,6 +159,13 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="second" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="FXn-mJ-Vj2">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="profile edit" id="h08-Zk-Sqz">
+                            <connections>
+                                <action selector="toSettings:" destination="8rJ-Kc-sve" id="w9b-qf-OSn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgroundImage" destination="uTx-Pr-qP0" id="Uz1-GV-ids"/>
                         <outlet property="experienceLabel" destination="2Qq-9v-bOP" id="OWf-Jj-GZI"/>
@@ -166,11 +173,30 @@
                         <outlet property="profileImage" destination="Wj6-qp-ddG" id="2Ed-oQ-iBN"/>
                         <outlet property="resortLabel" destination="tTH-n8-X7e" id="kJq-XG-KZU"/>
                         <outlet property="whiteBorder" destination="Uck-2w-cwm" id="zaa-18-OS5"/>
+                        <segue destination="bxa-uQ-Wxb" kind="show" identifier="ToSettings" id="WQT-o5-ZKG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="526" y="-869"/>
+            <point key="canvasLocation" x="553" y="-869"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9aw-NI-Azk">
+            <objects>
+                <viewController id="bxa-uQ-Wxb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RKG-t2-jXN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="70y-ni-4VW"/>
+                    </view>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="show" identifier="fromSettingsToProfile" id="8KS-WN-tKm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vnG-xC-v3X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1477" y="-859"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B4w-Ld-tiw">
@@ -247,7 +273,9 @@
                         <viewLayoutGuide key="safeArea" id="HQ4-NY-4Kw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="J7A-SP-P6H"/>
-                    <navigationItem key="navigationItem" id="rCv-Hw-fSf"/>
+                    <navigationItem key="navigationItem" id="rCv-Hw-fSf">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="zdj-08-8Bl"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="EOp-he-4Hk" id="wQm-GR-VmQ"/>
                         <outlet property="profileButton" destination="HFc-Je-IZ6" id="KV4-Se-tmO"/>
@@ -262,11 +290,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background image" width="2971" height="1615"/>
+        <image name="background image" width="1176" height="714"/>
         <image name="profile" width="25" height="25"/>
+        <image name="profile edit" width="25" height="25"/>
         <image name="profilepic" width="1102" height="1074"/>
         <image name="second" width="30" height="30"/>
         <image name="stars" width="1200" height="630"/>
         <image name="white" width="228" height="204"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8KS-WN-tKm"/>
+    </inferredMetricsTieBreakers>
 </document>
