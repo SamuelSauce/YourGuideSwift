@@ -285,7 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JFUD9S4QW6;
+				DEVELOPMENT_TEAM = EQS97V9J4Q;
 				INFOPLIST_FILE = YourGuideSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,7 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JFUD9S4QW6;
+				DEVELOPMENT_TEAM = EQS97V9J4Q;
 				INFOPLIST_FILE = YourGuideSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
