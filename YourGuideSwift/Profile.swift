@@ -17,12 +17,23 @@ class Profile: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var resortLabel: UILabel!
     
+    
+    
+    @IBAction func toSettings(_ sender: Any) {
+        
+        performSegue(withIdentifier: "ToSettings", sender: self)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = false
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        //self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"profile edit"), style: .plain, target: self, action: nil)
         
         profileImage.layer.cornerRadius = profileImage.frame.size.width/2
         profileImage.clipsToBounds = true

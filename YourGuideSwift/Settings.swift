@@ -8,10 +8,14 @@
 
 import UIKit
 
-class Settings: UIViewController {
+class Settings: UIViewController, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isHidden = false
+        
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
 
         // Do any additional setup after loading the view.
     }
