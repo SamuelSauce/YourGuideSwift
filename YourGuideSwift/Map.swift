@@ -10,6 +10,18 @@ import MapKit
 
 class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate {
     
+    //ANNOTATION DECLARED
+    let annotation = MKPointAnnotation()
+    
+    //Defines geoPoint as nil
+    var geoPoint : CLLocationCoordinate2D! = nil
+    
+    //this defines where on the map these points will be placed
+    let coords = [CLLocation(latitude: 40.588329, longitude: -111.638068),
+                    CLLocation(latitude: 40.580932, longitude:  -111.657701),
+                    CLLocation(latitude: 40.597826, longitude: -111.582990)]
+    
+    let titles = ["Alta", "Snowbird", "Brighton"]
   
     @IBOutlet weak var mapView: MKMapView!
     
@@ -65,6 +77,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
 
         view.backgroundColor = UIColor.white
         
+        addAnnotations(coords: coords)
+        
         self.navigationController?.navigationBar.isHidden = true
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -102,6 +116,118 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
             
         } */
         
+        
+    }
+    
+    //here is a function that can take that array, and loops through each element and adds it as an annotation to the mapView
+    func addAnnotations(coords: [CLLocation]) {
+        
+        var count = 0
+        
+        for coord in coords {
+            
+            let CLLCoordType = CLLocationCoordinate2D(latitude: coord.coordinate.latitude, longitude: coord.coordinate.longitude)
+            
+            let anno = MKPointAnnotation()
+            
+            anno.coordinate = CLLCoordType
+            
+            anno.title = titles[count]
+            
+            anno.subtitle = "Click for details"
+            
+            mapView.addAnnotation(anno)
+            
+            count += 1
+            
+        }
+        
+    }
+    
+    
+    //adds annotations to the map
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if annotation is MKUserLocation {
+            
+            return nil
+            
+        }
+            /*
+            let pinIdent = "Pin"
+            
+            var pinView: MKPinAnnotationView
+            
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdent) as? MKPinAnnotationView {
+                dequeuedView.annotation = annotation
+                
+                pinView = dequeuedView
+                
+            } else {
+                
+                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdent)
+                
+            }
+            
+            return pinView
+        }
+ */
+        
+        let reuseId = "pin"
+        if #available(iOS 11.0, *) {
+            var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+            //as? MKMarkerAnnotationView
+            
+            if pinView == nil {
+                //print("Pinview was nil")
+                //  pinView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+                
+                pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+                
+                pinView!.canShowCallout = true
+                
+                //if we want to add custom annotation image
+                
+                pinView!.image = UIImage(named: "resortPin")
+                
+            }
+            
+            let button = UIButton(type: UIButtonType.detailDisclosure) as UIButton // button with info sign in it
+            
+            //pinView!.isEnabled = true
+            pinView!.canShowCallout = true
+            pinView!.rightCalloutAccessoryView = button
+            // pinView?.detailCalloutAccessoryView = button
+            
+            
+            return pinView
+            
+        }
+            // if not iOS 11
+        else {
+            
+            var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+            
+            if pinView == nil {
+                //print("Pinview was nil")
+                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+                
+                pinView!.canShowCallout = true
+                pinView!.animatesDrop = true
+                
+            }
+            
+            let button = UIButton(type: UIButtonType.detailDisclosure) as UIButton // button with info sign in it
+            
+            //pinView!.isEnabled = true
+            pinView!.canShowCallout = true
+            pinView!.rightCalloutAccessoryView = button
+            // pinView?.detailCalloutAccessoryView = button
+            
+            
+            return pinView
+            // Fallback on earlier versions
+        }
         
     }
     
