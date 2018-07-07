@@ -1,0 +1,7 @@
+{
+  "appId": "xalted123",
+  "masterKey": "masterxalted123",
+  "appName": "XALTED",
+  "cloud": "./cloud/main",
+  "databaseURI": "mongodb://finntom:xalted123@ds227821.mlab.com:27821/xalteddb"
+}
