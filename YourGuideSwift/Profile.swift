@@ -18,9 +18,11 @@ class Profile: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var resortLabel: UILabel!
     
+    var inSettings: Bool!
     
     @IBAction func toSettings(_ sender: Any) {
         
+        inSettings = true
         performSegue(withIdentifier: "ToSettings", sender: self)
         
     }
@@ -28,6 +30,7 @@ class Profile: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        inSettings = false
         
         self.navigationController?.navigationBar.isHidden = false
         
@@ -45,9 +48,16 @@ class Profile: UIViewController, UINavigationControllerDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        inSettings = false
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         
-        self.navigationController?.navigationBar.isHidden = true
+        if(inSettings == false){
+            self.navigationController?.navigationBar.isHidden = true
+        }
+       
         
     }
     
