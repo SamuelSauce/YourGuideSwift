@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "serverURL": "http://localhost:1337/parse",
+    "serverURL": "http://Xalted-env.bvnipr2tpx.us-east-1.elasticbeanstalk.com/parse",
     "appId": "xalted123",
     "masterKey": "masterxalted123",
     "appName": "XALTED",

@@ -8,7 +8,7 @@
 
 import UIKit
 import Parse
-
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
             ParseMutableClientConfiguration.applicationId = "xalted123"
-            ParseMutableClientConfiguration.clientKey = "BRbBNhpYQPMPQwWil3Lh"
-            ParseMutableClientConfiguration.server = "http://localhost:1337/parse"
+            ParseMutableClientConfiguration.clientKey = ""
+            ParseMutableClientConfiguration.server = "http://Xalted-env.bvnipr2tpx.us-east-1.elasticbeanstalk.com/parse"
         })
         
         Parse.initialize(with: parseConfiguration)
@@ -73,7 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
         
-        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

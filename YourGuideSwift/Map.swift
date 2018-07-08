@@ -7,9 +7,9 @@
 //
 import UIKit
 import MapKit
+import Parse
 
 class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate {
-    
     //ANNOTATION DECLARED
     let annotation = MKPointAnnotation()
     
@@ -50,6 +50,19 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         
         self.mapView.setRegion(region, animated: true)
     }
+    
+    
+    @IBAction func findGuide(_ sender: Any) {
+        
+        let test = PFObject(className: "userProfile")
+        
+        test["name"] = "Finn"
+        
+        test.saveInBackground()
+        print("SAVED")
+    }
+    
+    
     
     //view did appear
     override func viewDidAppear(_ animated: Bool) {

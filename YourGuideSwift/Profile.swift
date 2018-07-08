@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class Profile: UIViewController, UINavigationControllerDelegate {
 
@@ -16,7 +17,6 @@ class Profile: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var experienceLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var resortLabel: UILabel!
-    
     
     
     @IBAction func toSettings(_ sender: Any) {

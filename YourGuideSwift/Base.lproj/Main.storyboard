@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background image" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-Pr-qP0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="219"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="175"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="Uck-2w-cwm">
                                 <rect key="frame" x="130" y="168" width="115" height="115"/>
@@ -243,6 +243,9 @@
                                 <state key="normal" title="Find a Guide">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="findGuide:" destination="5Ts-PL-cP4" eventType="touchUpInside" id="dfk-e5-22A"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFc-Je-IZ6">
                                 <rect key="frame" x="291" y="72" width="84" height="56"/>
@@ -299,6 +302,6 @@
         <image name="white" width="228" height="204"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8KS-WN-tKm"/>
+        <segue reference="PHn-BU-IKR"/>
     </inferredMetricsTieBreakers>
 </document>
