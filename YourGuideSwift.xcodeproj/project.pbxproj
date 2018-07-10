@@ -21,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		0F8A6F007ED6760C75A3E2D1 /* Pods-YourGuideSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourGuideSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-YourGuideSwift/Pods-YourGuideSwift.release.xcconfig"; sourceTree = "<group>"; };
+		6830BC4820F44E2200CF7EE7 /* YourGuideSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YourGuideSwift.entitlements; sourceTree = "<group>"; };
 		683DE4F220E835410046CBE3 /* YourGuideSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourGuideSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683DE4F520E835410046CBE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		683DE4F720E835410046CBE3 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		683DE4F420E835410046CBE3 /* YourGuideSwift */ = {
 			isa = PBXGroup;
 			children = (
+				6830BC4820F44E2200CF7EE7 /* YourGuideSwift.entitlements */,
 				683DE4F520E835410046CBE3 /* AppDelegate.swift */,
 				B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */,
 				B6D2252820F449FE003BCAF6 /* signUp.swift */,
@@ -134,6 +136,11 @@
 				TargetAttributes = {
 					683DE4F120E835410046CBE3 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -366,14 +373,15 @@
 			baseConfigurationReference = 7951525E1842486C76D7D7B0 /* Pods-YourGuideSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YourGuideSwift/YourGuideSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EQS97V9J4Q;
+				DEVELOPMENT_TEAM = 28AQKG4H74;
 				INFOPLIST_FILE = YourGuideSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Sam.YourGuideSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = Sam.xalted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -385,14 +393,15 @@
 			baseConfigurationReference = 0F8A6F007ED6760C75A3E2D1 /* Pods-YourGuideSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YourGuideSwift/YourGuideSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EQS97V9J4Q;
+				DEVELOPMENT_TEAM = 28AQKG4H74;
 				INFOPLIST_FILE = YourGuideSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Sam.YourGuideSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = Sam.xalted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

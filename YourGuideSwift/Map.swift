@@ -129,7 +129,6 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
             
         } */
         
-        
     }
     
     //here is a function that can take that array, and loops through each element and adds it as an annotation to the mapView
@@ -345,11 +344,6 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         }
  
  */
-    
-    
-        
-        
-        
         
     }
 
