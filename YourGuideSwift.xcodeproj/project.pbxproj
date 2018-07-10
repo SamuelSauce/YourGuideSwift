@@ -33,7 +33,7 @@
 		68F6457920EB1F5200326C0A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		6C1A50BC7D993794087F46EB /* Pods_YourGuideSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourGuideSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7951525E1842486C76D7D7B0 /* Pods-YourGuideSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourGuideSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YourGuideSwift/Pods-YourGuideSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		B6D2252820F449FE003BCAF6 /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = signUp.swift; path = /Users/Finn/Desktop/YourGuideSwift/YourGuideSwift/signUp.swift; sourceTree = "<absolute>"; };
+		B6D2252820F449FE003BCAF6 /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = signUp.swift; path = /Users/samuelfbridge/Desktop/YourGuideSwift/YourGuideSwift/signUp.swift; sourceTree = "<absolute>"; };
 		B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

@@ -16,18 +16,6 @@ class LogoPage: UIViewController {
     var timer = Timer()
     
     
-    
-    
-    /*
-     func toFeed() {
-     
-     performSegue(withIdentifier: "TabBarStart", sender: self)
-     
-     
-     }
-     
-     */
-    
     @objc func toLogin() {
         
         performSegue(withIdentifier: "toLogin", sender: self)
@@ -45,13 +33,11 @@ class LogoPage: UIViewController {
     //VIEW DID APPEAR
     override func viewDidAppear(_ animated: Bool) {
         
-        view.backgroundColor = UIColor.black
-        
         var user = PFUser.current()
         
         if user == nil {
             
-            timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(LogoPage.toLogin), userInfo: nil, repeats: false)
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(LogoPage.toLogin), userInfo: nil, repeats: false)
         }
         
         if user != nil {

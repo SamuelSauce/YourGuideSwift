@@ -309,7 +309,6 @@
         <!--Sign Up-->
         <scene sceneID="uhS-Ed-fhk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gyF-p6-S7W" sceneMemberID="firstResponder"/>
                 <viewController id="9ls-eg-PuI" customClass="signUp" customModule="YourGuideSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="foT-qj-Con"/>
@@ -389,6 +388,7 @@
                         <segue destination="gsH-v3-nXO" kind="show" identifier="toMap" id="Llo-4r-Alj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyF-p6-S7W" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3788" y="126"/>
         </scene>
@@ -607,7 +607,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="OKH-0X-xHy"/>
-        <segue reference="Llo-4r-Alj"/>
+        <segue reference="4SU-yO-54c"/>
         <segue reference="8KS-WN-tKm"/>
     </inferredMetricsTieBreakers>
 </document>

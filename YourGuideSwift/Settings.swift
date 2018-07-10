@@ -26,7 +26,7 @@ class Settings: UIViewController, UINavigationControllerDelegate {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = false
-        
+
                 self.navigationController?.setNavigationBarHidden(false, animated: true)
 
         // Do any additional setup after loading the view.
