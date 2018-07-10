@@ -10,7 +10,18 @@ import UIKit
 import Parse
 
 class Settings: UIViewController, UINavigationControllerDelegate {
+    
+    
 
+    @IBAction func signOut(_ sender: Any) {
+        
+        PFUser.logOut()
+        
+        performSegue(withIdentifier: "backToLogin", sender: self)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

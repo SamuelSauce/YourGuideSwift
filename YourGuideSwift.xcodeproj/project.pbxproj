@@ -15,6 +15,8 @@
 		683DE4FF20E835420046CBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683DE4FE20E835420046CBE3 /* Assets.xcassets */; };
 		683DE50220E835420046CBE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683DE50020E835420046CBE3 /* LaunchScreen.storyboard */; };
 		68F6457A20EB1F5200326C0A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6457920EB1F5200326C0A /* Settings.swift */; };
+		B6D2252920F449FE003BCAF6 /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2252820F449FE003BCAF6 /* signUp.swift */; };
+		B6D2252B20F44F2F003BCAF6 /* LogoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		68F6457920EB1F5200326C0A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		6C1A50BC7D993794087F46EB /* Pods_YourGuideSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourGuideSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7951525E1842486C76D7D7B0 /* Pods-YourGuideSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourGuideSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YourGuideSwift/Pods-YourGuideSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		B6D2252820F449FE003BCAF6 /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = signUp.swift; path = /Users/Finn/Desktop/YourGuideSwift/YourGuideSwift/signUp.swift; sourceTree = "<absolute>"; };
+		B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				683DE4F520E835410046CBE3 /* AppDelegate.swift */,
+				B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */,
+				B6D2252820F449FE003BCAF6 /* signUp.swift */,
 				683DE4F720E835410046CBE3 /* Map.swift */,
 				683DE4F920E835410046CBE3 /* Profile.swift */,
 				68F6457920EB1F5200326C0A /* Settings.swift */,
@@ -210,10 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D2252920F449FE003BCAF6 /* signUp.swift in Sources */,
 				683DE4FA20E835410046CBE3 /* Profile.swift in Sources */,
 				683DE4F620E835410046CBE3 /* AppDelegate.swift in Sources */,
 				683DE4F820E835410046CBE3 /* Map.swift in Sources */,
 				68F6457A20EB1F5200326C0A /* Settings.swift in Sources */,
+				B6D2252B20F44F2F003BCAF6 /* LogoPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
