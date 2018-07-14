@@ -188,9 +188,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-zV-LeO">
-                                <rect key="frame" x="16" y="136" width="343" height="30"/>
-                                <state key="normal" title="Sign Out"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-zV-LeO">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" red="1" green="0.058155415100000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="signOut:" destination="bxa-uQ-Wxb" eventType="touchUpInside" id="HDw-5c-e3L"/>
                                 </connections>
@@ -198,9 +200,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5YP-zV-LeO" firstAttribute="top" secondItem="70y-ni-4VW" secondAttribute="top" constant="116" id="sPD-HF-vI9"/>
-                            <constraint firstItem="5YP-zV-LeO" firstAttribute="leading" secondItem="RKG-t2-jXN" secondAttribute="leadingMargin" id="yMf-WY-qT4"/>
-                            <constraint firstItem="5YP-zV-LeO" firstAttribute="trailing" secondItem="RKG-t2-jXN" secondAttribute="trailingMargin" id="zRh-nm-MT0"/>
+                            <constraint firstItem="70y-ni-4VW" firstAttribute="bottom" secondItem="5YP-zV-LeO" secondAttribute="bottom" constant="20" id="4Y5-HP-uIt"/>
+                            <constraint firstItem="5YP-zV-LeO" firstAttribute="centerX" secondItem="70y-ni-4VW" secondAttribute="centerX" id="AG8-iA-Gqo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="70y-ni-4VW"/>
                     </view>
@@ -309,7 +310,6 @@
         <!--Sign Up-->
         <scene sceneID="uhS-Ed-fhk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gyF-p6-S7W" sceneMemberID="firstResponder"/>
                 <viewController id="9ls-eg-PuI" customClass="signUp" customModule="YourGuideSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="foT-qj-Con"/>
@@ -341,7 +341,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lCX-Ps-9VK">
                                 <rect key="frame" x="16" y="225.5" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYh-be-s8m">
                                 <rect key="frame" x="16" y="263.5" width="343" height="30"/>
@@ -389,6 +389,7 @@
                         <segue destination="gsH-v3-nXO" kind="show" identifier="toMap" id="Llo-4r-Alj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyF-p6-S7W" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3788" y="126"/>
         </scene>
@@ -606,7 +607,7 @@
         <image name="white" width="228" height="204"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OKH-0X-xHy"/>
+        <segue reference="0Ge-aF-tlu"/>
         <segue reference="Llo-4r-Alj"/>
         <segue reference="8KS-WN-tKm"/>
     </inferredMetricsTieBreakers>
