@@ -95,7 +95,7 @@ class signUp: UIViewController {
                     print("User signed up")
                     
                     
-                    self.performSegue(withIdentifier: "toMap", sender: self)
+                    self.performSegue(withIdentifier: "signUpToMap", sender: self)
                     
                 }
                 
@@ -105,6 +105,14 @@ class signUp: UIViewController {
         }
         
     }
+    
+    
+    @IBAction func toLogin(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toLogin", sender: self)
+        
+    }
+    
     
 
     
