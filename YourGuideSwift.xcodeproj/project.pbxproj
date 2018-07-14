@@ -17,6 +17,7 @@
 		68F6457A20EB1F5200326C0A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6457920EB1F5200326C0A /* Settings.swift */; };
 		B65A7EE120FA8E1F00E2A9C9 /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE020FA8E1F00E2A9C9 /* signUp.swift */; };
 		B65A7EE320FA9A3100E2A9C9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE220FA9A3100E2A9C9 /* Login.swift */; };
+		B65A7EE520FAB73100E2A9C9 /* mobileLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE420FAB73100E2A9C9 /* mobileLogin.swift */; };
 		B6D2252B20F44F2F003BCAF6 /* LogoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		7951525E1842486C76D7D7B0 /* Pods-YourGuideSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourGuideSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YourGuideSwift/Pods-YourGuideSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B65A7EE020FA8E1F00E2A9C9 /* signUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
 		B65A7EE220FA9A3100E2A9C9 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B65A7EE420FAB73100E2A9C9 /* mobileLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileLogin.swift; sourceTree = "<group>"; };
 		B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 			children = (
 				6830BC4820F44E2200CF7EE7 /* YourGuideSwift.entitlements */,
 				683DE4F520E835410046CBE3 /* AppDelegate.swift */,
+				B65A7EE420FAB73100E2A9C9 /* mobileLogin.swift */,
 				B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */,
 				B65A7EE020FA8E1F00E2A9C9 /* signUp.swift */,
 				B65A7EE220FA9A3100E2A9C9 /* Login.swift */,
@@ -231,6 +234,7 @@
 				683DE4FA20E835410046CBE3 /* Profile.swift in Sources */,
 				683DE4F620E835410046CBE3 /* AppDelegate.swift in Sources */,
 				683DE4F820E835410046CBE3 /* Map.swift in Sources */,
+				B65A7EE520FAB73100E2A9C9 /* mobileLogin.swift in Sources */,
 				68F6457A20EB1F5200326C0A /* Settings.swift in Sources */,
 				B6D2252B20F44F2F003BCAF6 /* LogoPage.swift in Sources */,
 			);
