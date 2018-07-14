@@ -4,9 +4,9 @@
     "appId": "xalted123",
     "masterKey": "masterxalted123",
     "appName": "XALTED",
-    "iconName": "",
+    "iconName": "xaltedicon.png",
     "primaryBackgroundColor": "",
     "secondaryBackgroundColor": ""
   }],
-  "iconsFolder": ""
+  "iconsFolder": "icons"
 }

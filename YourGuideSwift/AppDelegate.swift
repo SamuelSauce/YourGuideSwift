@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import IQKeyboardManagerSwift
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         
         Parse.initialize(with: parseConfiguration)
+        
+        let userNotificationCenter = UNUserNotificationCenter.current()
+        userNotificationCenter.delegate = self
+        
+        //2
+        userNotificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { accepted, error in
+            guard accepted == true else {
+                print("User declined remote notifications")
+                return
+            }
+            //3
+            application.registerForRemoteNotifications()
+        }
         
         
         // ****************************************************************************
@@ -74,6 +88,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
         
     }
+    
+    // 1
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let installation = PFInstallation.current()
+        installation?.setDeviceTokenFrom(deviceToken)
+        installation?.saveInBackground()
+    }
+    // 2
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        if (error as NSError).code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.")
+        } else {
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
+        }
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -100,3 +129,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler:
+        @escaping (UNNotificationPresentationOptions) -> Void) {
+        PFPush.handle(notification.request.content.userInfo)
+        completionHandler(.alert)
+    }
+}
