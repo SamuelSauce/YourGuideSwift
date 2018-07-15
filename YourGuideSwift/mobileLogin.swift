@@ -13,21 +13,36 @@ class mobileLogin: UIViewController {
 
     @IBOutlet weak var mobileNumber: UITextField!
     
+    @IBOutlet weak var errorLabel: UILabel!
     
     @IBAction func nextStep(_ sender: Any) {
         
-        var user = PFQuery(className: "User")
-        user.whereKey("username", equalTo: mobileNumber.text)
-        user.findObjectsInBackground { (objects, error) in
+        var number = mobileNumber.text
+        
+        if mobileNumber.text == ""  {
+            
+            errorLabel.alpha = 1
+            
+            } else if (number?.characters.count)! < 10 {
+            
+            errorLabel.text = "Phone number isn't long enough"
+            errorLabel.alpha = 1
+        }
+        
+        else {
+        
+        var user = PFUser.query()
+        user?.whereKey("username", equalTo: mobileNumber.text)
+        user?.findObjectsInBackground { (objects, error) in
             if let object = objects {
                 
                 if object.count > 0 {
                     
-                    
+                    self.performSegue(withIdentifier: "accountExists", sender: self)
                     
                 } else {
                     
-                    
+                    self.performSegue(withIdentifier: "newAccount", sender: self)
                     
                 }
         
@@ -35,13 +50,32 @@ class mobileLogin: UIViewController {
                 
                 
             }
+            
+        }
+        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "accountExists" {
+            
+            let vc = segue.destination as! signIn
+            
+            vc.phone = mobileNumber.text!
+            
         }
         
+        else if segue.identifier == "newAccount" {
+            
+            let vc = segue.destination as! createPassword
+            vc.phone = mobileNumber.text!
+        }
     }
+        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        errorLabel.alpha = 0
         mobileNumber.setBottomBorder()
 
         // Do any additional setup after loading the view.
