@@ -15,8 +15,8 @@
 		683DE4FF20E835420046CBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683DE4FE20E835420046CBE3 /* Assets.xcassets */; };
 		683DE50220E835420046CBE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683DE50020E835420046CBE3 /* LaunchScreen.storyboard */; };
 		68F6457A20EB1F5200326C0A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6457920EB1F5200326C0A /* Settings.swift */; };
-		B65A7EE120FA8E1F00E2A9C9 /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE020FA8E1F00E2A9C9 /* signUp.swift */; };
-		B65A7EE320FA9A3100E2A9C9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE220FA9A3100E2A9C9 /* Login.swift */; };
+		B65A7EE120FA8E1F00E2A9C9 /* OLDsignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE020FA8E1F00E2A9C9 /* OLDsignUp.swift */; };
+		B65A7EE320FA9A3100E2A9C9 /* OLDLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE220FA9A3100E2A9C9 /* OLDLogin.swift */; };
 		B65A7EE520FAB73100E2A9C9 /* mobileLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE420FAB73100E2A9C9 /* mobileLogin.swift */; };
 		B65A7EE720FAC3E800E2A9C9 /* signIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE620FAC3E800E2A9C9 /* signIn.swift */; };
 		B65A7EE920FAC6B300E2A9C9 /* createPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE820FAC6B300E2A9C9 /* createPassword.swift */; };
@@ -37,8 +37,8 @@
 		68F6457920EB1F5200326C0A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		6C1A50BC7D993794087F46EB /* Pods_YourGuideSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourGuideSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7951525E1842486C76D7D7B0 /* Pods-YourGuideSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourGuideSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YourGuideSwift/Pods-YourGuideSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		B65A7EE020FA8E1F00E2A9C9 /* signUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
-		B65A7EE220FA9A3100E2A9C9 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B65A7EE020FA8E1F00E2A9C9 /* OLDsignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLDsignUp.swift; sourceTree = "<group>"; };
+		B65A7EE220FA9A3100E2A9C9 /* OLDLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDLogin.swift; sourceTree = "<group>"; };
 		B65A7EE420FAB73100E2A9C9 /* mobileLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileLogin.swift; sourceTree = "<group>"; };
 		B65A7EE620FAC3E800E2A9C9 /* signIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signIn.swift; sourceTree = "<group>"; };
 		B65A7EE820FAC6B300E2A9C9 /* createPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createPassword.swift; sourceTree = "<group>"; };
@@ -84,12 +84,12 @@
 				B65A7EE420FAB73100E2A9C9 /* mobileLogin.swift */,
 				B65A7EE620FAC3E800E2A9C9 /* signIn.swift */,
 				B65A7EE820FAC6B300E2A9C9 /* createPassword.swift */,
-				B65A7EE020FA8E1F00E2A9C9 /* signUp.swift */,
-				B65A7EE220FA9A3100E2A9C9 /* Login.swift */,
 				683DE4F720E835410046CBE3 /* Map.swift */,
-				683DE4F920E835410046CBE3 /* Profile.swift */,
 				68F6457920EB1F5200326C0A /* Settings.swift */,
 				683DE4FB20E835410046CBE3 /* Main.storyboard */,
+				683DE4F920E835410046CBE3 /* Profile.swift */,
+				B65A7EE020FA8E1F00E2A9C9 /* OLDsignUp.swift */,
+				B65A7EE220FA9A3100E2A9C9 /* OLDLogin.swift */,
 				683DE4FE20E835420046CBE3 /* Assets.xcassets */,
 				683DE50020E835420046CBE3 /* LaunchScreen.storyboard */,
 				683DE50320E835420046CBE3 /* Info.plist */,
@@ -235,8 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B65A7EE320FA9A3100E2A9C9 /* Login.swift in Sources */,
-				B65A7EE120FA8E1F00E2A9C9 /* signUp.swift in Sources */,
+				B65A7EE320FA9A3100E2A9C9 /* OLDLogin.swift in Sources */,
+				B65A7EE120FA8E1F00E2A9C9 /* OLDsignUp.swift in Sources */,
 				683DE4FA20E835410046CBE3 /* Profile.swift in Sources */,
 				683DE4F620E835410046CBE3 /* AppDelegate.swift in Sources */,
 				B65A7EE920FAC6B300E2A9C9 /* createPassword.swift in Sources */,

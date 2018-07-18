@@ -77,6 +77,8 @@ class mobileLogin: UIViewController {
         
         errorLabel.alpha = 0
         mobileNumber.setBottomBorder()
+        
+        
 
         // Do any additional setup after loading the view.
     }

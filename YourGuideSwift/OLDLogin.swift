@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class Login: UIViewController {
+class OLDLogin: UIViewController {
     
     
     var activityIndicator = UIActivityIndicatorView()
