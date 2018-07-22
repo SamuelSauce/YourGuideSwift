@@ -54,6 +54,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     
     @IBAction func findGuide(_ sender: Any) {
         
+        sendPush()
         let test = PFObject(className: "userProfile")
         
         test["name"] = "Finn"
@@ -274,7 +275,12 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func sendPush(){
+        let push = PFPush()
+        push.setChannel("News")
+        push.setMessage("Push From Device")
+        push.sendInBackground()
+    }
     // Here we add disclosure button inside annotation window
     
     /*
