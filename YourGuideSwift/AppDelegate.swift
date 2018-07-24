@@ -22,25 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.enableLocalDatastore()
         
-        let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
-            ParseMutableClientConfiguration.applicationId = "xalted123"
-            ParseMutableClientConfiguration.clientKey = ""
-            ParseMutableClientConfiguration.server = "http://Xalted-env.bvnipr2tpx.us-east-1.elasticbeanstalk.com/parse"
-        })
-        
-        Parse.initialize(with: parseConfiguration)
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "JaLYLJdBNFhpDM4xIDCorQO1Dg2KBDOZLTW5AFbC"
+            $0.clientKey = "71A6ZGOc7p8cgPKJLrxHu1FHKXXkL9OAJzwxSHxC"
+            $0.server = "https://parseapi.back4app.com"
+        }
+        Parse.initialize(with: configuration)
+        saveInstallationObject()
         
         let userNotificationCenter = UNUserNotificationCenter.current()
         userNotificationCenter.delegate = self
         
-        //2
-        userNotificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { accepted, error in
-            guard accepted == true else {
-                print("User declined remote notifications")
-                return
-            }
-            //3
-            application.registerForRemoteNotifications()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge, .carPlay ]) {
+            (granted, error) in
+            print("Permission granted: \(granted)")
+            guard granted else { return }
+            self.getNotificationSettings()
         }
         
         
@@ -88,19 +85,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
         
     }
-    
-    // 1
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let installation = PFInstallation.current()
-        installation?.setDeviceTokenFrom(deviceToken)
-        installation?.saveInBackground()
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else { return }
+            UIApplication.shared.registerForRemoteNotifications()
+        }
     }
-    // 2
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        if (error as NSError).code == 3010 {
-            print("Push notifications are not supported in the iOS Simulator.")
-        } else {
-            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
+    func saveInstallationObject(){
+        if let installation = PFInstallation.current(){
+            installation.saveInBackground {
+                (success: Bool, error: Error?) in
+                if (success) {
+                    print("You have successfully connected your app to Back4App!")
+                } else {
+                    if let myError = error{
+                        print(myError.localizedDescription)
+                    }else{
+                        print("Uknown error")
+                    }
+                }
+            }
+        }
+    }
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        createInstallationOnParse(deviceTokenData: deviceToken)
+    }
+    
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
+    
+    func createInstallationOnParse(deviceTokenData:Data){
+        if let installation = PFInstallation.current(){
+            installation.setDeviceTokenFrom(deviceTokenData)
+            installation.setObject(["News"], forKey: "channels")
+            installation.saveInBackground {
+                (success: Bool, error: Error?) in
+                if (success) {
+                    print("You have successfully saved your push installation to Back4App!")
+                } else {
+                    if let myError = error{
+                        print("Error saving parse installation \(myError.localizedDescription)")
+                    }else{
+                        print("Uknown error")
+                    }
+                }
+            }
         }
     }
 
