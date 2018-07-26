@@ -277,8 +277,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     
     func sendPush(){
         let push = PFPush()
-        push.setChannel("News")
-        push.setMessage("Push From Device")
+        push.setChannel("Elijah")
+        push.setMessage("Elijah, did you get this notification?")
         push.sendInBackground()
     }
     // Here we add disclosure button inside annotation window
