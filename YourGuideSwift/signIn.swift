@@ -19,6 +19,21 @@ class signIn: UIViewController {
     
     var activityIndicator = UIActivityIndicatorView()
     
+    @IBAction func forgotPass(_ sender: Any) {
+        //in the ["email":"samuelfbridge@gmail.com"], just replace my email with the current users email and it should work.
+        PFCloud.callFunction(inBackground: "passReset", withParameters: ["email":"samuelfbridge@gmail.com"]) { (response, error) in
+            if let error = error {
+                //If it fails, maybe display a message with code inside here
+                print(error.localizedDescription)
+            } else {
+                //else it was successful, maybe display "success, email sent" on screen here.
+                let responseString = response as? String
+                print(responseString)
+            }
+            
+        }
+    }
+    
     @IBAction func signIn(_ sender: Any) {
         
         //USE CATCH FUNCTION TO STOP APP FROM CRASHING
