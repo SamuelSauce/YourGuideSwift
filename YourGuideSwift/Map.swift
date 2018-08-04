@@ -16,13 +16,45 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     //Defines geoPoint as nil
     var geoPoint : CLLocationCoordinate2D! = nil
     
-    //this defines where on the map these points will be placed
-    let coords = [CLLocation(latitude: 40.588329, longitude: -111.638068),
-                    CLLocation(latitude: 40.580932, longitude:  -111.657701),
-                    CLLocation(latitude: 40.597826, longitude: -111.582990)]
+    //sets titles for given coords
+    let titles = ["Alta", "Snowbird", "Brighton", "Solitude", "Park City Mountain Resort", "Deer Valley", "Snowbasin", "Jackson Hole Ski Area", "Sun Valley", "Aspen Highlands Ski Resort", "Breckenridge", "Steamboat", "Telluride", "Keystone", "Mammoth", "Bear Mountain Ski Resort", "Squaw Valley"]
     
-    let titles = ["Alta", "Snowbird", "Brighton"]
-  
+    //Resorts added to the map
+    let Alta = CLLocation(latitude: 40.588329, longitude: -111.638068)
+    
+    let Snowbird = CLLocation(latitude: 40.580932, longitude:  -111.657701)
+    
+    let Brighton = CLLocation(latitude: 40.597826, longitude: -111.582990)
+    
+    let Solitude = CLLocation(latitude: 40.619873, longitude: -111.591645)
+    
+    let ParkCity = CLLocation(latitude: 40.651323, longitude: -111.508058)
+    
+    let DeerValley = CLLocation(latitude: 40.637331, longitude: -111.478478)
+    
+    let SnowBasin = CLLocation(latitude: 41.215875, longitude: -111.856886)
+    
+    let Jackson = CLLocation(latitude: 43.586730, longitude: -110.827388)
+    
+    let SunValley = CLLocation(latitude: 43.671079, longitude: -114.367772)
+    
+    let AspenHighlands = CLLocation(latitude: 39.182223, longitude: -106.855618)
+    
+    let Breckenridge = CLLocation(latitude: 39.480112, longitude: -106.066537)
+    
+    let Steamboat = CLLocation(latitude: 40.457109, longitude: -106.804608)
+    
+    let Telluride = CLLocation(latitude: 37.936742, longitude: -107.846860)
+    
+    let Keystone = CLLocation(latitude: 39.604678, longitude: -105.954873)
+    
+    let Mammoth = CLLocation(latitude: 37.651380, longitude: -119.037941)
+    
+    let BearMountain = CLLocation(latitude: 34.227627, longitude: -116.860907)
+    
+    let SquawValley = CLLocation(latitude: 39.197448, longitude: -120.235457)
+    
+    
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var profileButton: UIButton!
@@ -55,12 +87,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     @IBAction func findGuide(_ sender: Any) {
         
         sendPush()
-        let test = PFObject(className: "userProfile")
         
-        test["name"] = "Finn"
-        
-        test.saveInBackground()
-        print("SAVED")
     }
     
     
@@ -88,6 +115,9 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     //VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //this defines where on the map these points will be placed
+        let coords = [Alta, Snowbird, Brighton, Solitude, ParkCity, DeerValley, SnowBasin, Jackson, SunValley, AspenHighlands, Breckenridge, Steamboat, Telluride, Keystone, Mammoth, BearMountain, SquawValley]
 
         view.backgroundColor = UIColor.white
         
@@ -201,7 +231,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
                 
                 //if we want to add custom annotation image
                 
-                pinView!.image = UIImage(named: "resortPin")
+                pinView!.image = UIImage(named: "tram")
                 
             }
             
@@ -244,6 +274,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         
     }
     
+    /*
     //Setting up map & location zoom
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -268,7 +299,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         locationManager.stopUpdatingLocation()
         
         
-    }
+    } */
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

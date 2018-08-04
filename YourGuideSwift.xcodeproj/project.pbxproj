@@ -14,12 +14,14 @@
 		683DE4FD20E835410046CBE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683DE4FB20E835410046CBE3 /* Main.storyboard */; };
 		683DE4FF20E835420046CBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683DE4FE20E835420046CBE3 /* Assets.xcassets */; };
 		683DE50220E835420046CBE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683DE50020E835420046CBE3 /* LaunchScreen.storyboard */; };
-		68F6457A20EB1F5200326C0A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6457920EB1F5200326C0A /* Settings.swift */; };
-		B65A7EE120FA8E1F00E2A9C9 /* OLDsignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE020FA8E1F00E2A9C9 /* OLDsignUp.swift */; };
-		B65A7EE320FA9A3100E2A9C9 /* OLDLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE220FA9A3100E2A9C9 /* OLDLogin.swift */; };
-		B65A7EE520FAB73100E2A9C9 /* mobileLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE420FAB73100E2A9C9 /* mobileLogin.swift */; };
+		B6250379210CF22A0039F5E0 /* SignUpName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6250378210CF22A0039F5E0 /* SignUpName.swift */; };
+		B625037B210CF70B0039F5E0 /* SignUpAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625037A210CF70B0039F5E0 /* SignUpAbout.swift */; };
+		B625037D210CFE170039F5E0 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625037C210CFE170039F5E0 /* EditProfile.swift */; };
+		B625037F210D02710039F5E0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625037E210D02710039F5E0 /* Settings.swift */; };
+		B6250381210D02E20039F5E0 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6250380210D02E20039F5E0 /* SettingsCell.swift */; };
+		B65A7EE520FAB73100E2A9C9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE420FAB73100E2A9C9 /* Login.swift */; };
 		B65A7EE720FAC3E800E2A9C9 /* signIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE620FAC3E800E2A9C9 /* signIn.swift */; };
-		B65A7EE920FAC6B300E2A9C9 /* createPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE820FAC6B300E2A9C9 /* createPassword.swift */; };
+		B65A7EE920FAC6B300E2A9C9 /* SignUpEmailandPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65A7EE820FAC6B300E2A9C9 /* SignUpEmailandPass.swift */; };
 		B6D2252B20F44F2F003BCAF6 /* LogoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,14 +36,16 @@
 		683DE4FE20E835420046CBE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		683DE50120E835420046CBE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		683DE50320E835420046CBE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68F6457920EB1F5200326C0A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		6C1A50BC7D993794087F46EB /* Pods_YourGuideSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourGuideSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7951525E1842486C76D7D7B0 /* Pods-YourGuideSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourGuideSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YourGuideSwift/Pods-YourGuideSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		B65A7EE020FA8E1F00E2A9C9 /* OLDsignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLDsignUp.swift; sourceTree = "<group>"; };
-		B65A7EE220FA9A3100E2A9C9 /* OLDLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDLogin.swift; sourceTree = "<group>"; };
-		B65A7EE420FAB73100E2A9C9 /* mobileLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileLogin.swift; sourceTree = "<group>"; };
+		B6250378210CF22A0039F5E0 /* SignUpName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpName.swift; sourceTree = "<group>"; };
+		B625037A210CF70B0039F5E0 /* SignUpAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAbout.swift; sourceTree = "<group>"; };
+		B625037C210CFE170039F5E0 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		B625037E210D02710039F5E0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B6250380210D02E20039F5E0 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		B65A7EE420FAB73100E2A9C9 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		B65A7EE620FAC3E800E2A9C9 /* signIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signIn.swift; sourceTree = "<group>"; };
-		B65A7EE820FAC6B300E2A9C9 /* createPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createPassword.swift; sourceTree = "<group>"; };
+		B65A7EE820FAC6B300E2A9C9 /* SignUpEmailandPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailandPass.swift; sourceTree = "<group>"; };
 		B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,15 +85,17 @@
 				6830BC4820F44E2200CF7EE7 /* YourGuideSwift.entitlements */,
 				683DE4F520E835410046CBE3 /* AppDelegate.swift */,
 				B6D2252A20F44F2F003BCAF6 /* LogoPage.swift */,
-				B65A7EE420FAB73100E2A9C9 /* mobileLogin.swift */,
+				B65A7EE420FAB73100E2A9C9 /* Login.swift */,
 				B65A7EE620FAC3E800E2A9C9 /* signIn.swift */,
-				B65A7EE820FAC6B300E2A9C9 /* createPassword.swift */,
+				B65A7EE820FAC6B300E2A9C9 /* SignUpEmailandPass.swift */,
+				B6250378210CF22A0039F5E0 /* SignUpName.swift */,
+				B625037A210CF70B0039F5E0 /* SignUpAbout.swift */,
 				683DE4F720E835410046CBE3 /* Map.swift */,
-				68F6457920EB1F5200326C0A /* Settings.swift */,
-				683DE4FB20E835410046CBE3 /* Main.storyboard */,
 				683DE4F920E835410046CBE3 /* Profile.swift */,
-				B65A7EE020FA8E1F00E2A9C9 /* OLDsignUp.swift */,
-				B65A7EE220FA9A3100E2A9C9 /* OLDLogin.swift */,
+				B625037E210D02710039F5E0 /* Settings.swift */,
+				B6250380210D02E20039F5E0 /* SettingsCell.swift */,
+				B625037C210CFE170039F5E0 /* EditProfile.swift */,
+				683DE4FB20E835410046CBE3 /* Main.storyboard */,
 				683DE4FE20E835420046CBE3 /* Assets.xcassets */,
 				683DE50020E835420046CBE3 /* LaunchScreen.storyboard */,
 				683DE50320E835420046CBE3 /* Info.plist */,
@@ -235,15 +241,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B65A7EE320FA9A3100E2A9C9 /* OLDLogin.swift in Sources */,
-				B65A7EE120FA8E1F00E2A9C9 /* OLDsignUp.swift in Sources */,
 				683DE4FA20E835410046CBE3 /* Profile.swift in Sources */,
 				683DE4F620E835410046CBE3 /* AppDelegate.swift in Sources */,
-				B65A7EE920FAC6B300E2A9C9 /* createPassword.swift in Sources */,
+				B625037D210CFE170039F5E0 /* EditProfile.swift in Sources */,
+				B65A7EE920FAC6B300E2A9C9 /* SignUpEmailandPass.swift in Sources */,
+				B6250381210D02E20039F5E0 /* SettingsCell.swift in Sources */,
 				683DE4F820E835410046CBE3 /* Map.swift in Sources */,
 				B65A7EE720FAC3E800E2A9C9 /* signIn.swift in Sources */,
-				B65A7EE520FAB73100E2A9C9 /* mobileLogin.swift in Sources */,
-				68F6457A20EB1F5200326C0A /* Settings.swift in Sources */,
+				B625037F210D02710039F5E0 /* Settings.swift in Sources */,
+				B625037B210CF70B0039F5E0 /* SignUpAbout.swift in Sources */,
+				B65A7EE520FAB73100E2A9C9 /* Login.swift in Sources */,
+				B6250379210CF22A0039F5E0 /* SignUpName.swift in Sources */,
 				B6D2252B20F44F2F003BCAF6 /* LogoPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

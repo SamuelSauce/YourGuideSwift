@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class createPassword: UIViewController {
+class SignUpEmailandPass: UIViewController {
 
     var activityIndicator = UIActivityIndicatorView()
     

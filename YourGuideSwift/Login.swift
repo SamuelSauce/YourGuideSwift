@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class mobileLogin: UIViewController {
+class Login: UIViewController {
 
     @IBOutlet weak var mobileNumber: UITextField!
     
@@ -65,7 +65,7 @@ class mobileLogin: UIViewController {
         
         else if segue.identifier == "newAccount" {
             
-            let vc = segue.destination as! createPassword
+            let vc = segue.destination as! SignUpEmailandPass
             vc.phone = mobileNumber.text!
         }
     }
