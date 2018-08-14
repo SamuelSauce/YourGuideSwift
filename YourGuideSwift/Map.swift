@@ -54,6 +54,14 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     
     let SquawValley = CLLocation(latitude: 39.197448, longitude: -120.235457)
     
+
+    @IBOutlet weak var locationButton: UIButton!
+    
+    @IBAction func locationChooser(_ sender: Any) {
+        var locationVC = self.storyboard?.instantiateViewController(withIdentifier: "locationViewController") as! UIViewController
+        self.navigationController?.present(locationVC, animated: true, completion: nil)
+    }
+    
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -85,9 +93,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     
     
     @IBAction func findGuide(_ sender: Any) {
-        
         sendPush()
-        
     }
     
     
@@ -95,7 +101,6 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     //view did appear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         self.navigationController?.navigationBar.isHidden = true
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
@@ -103,6 +108,29 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
+        var user = PFUser.query()
+        
+        user?.whereKey("username", equalTo: PFUser.current()?.username)
+        
+        user?.findObjectsInBackground(block: { (objects, error) in
+            
+            if let persons = objects {
+                
+                for object in persons {
+                    
+                    if let person = object as? PFObject {
+                        
+                        self.locationButton.setTitle((person["resort"] as! String), for: .normal)
+                        
+                        
+                    }
+                    
+                }
+                
+                
+            }
+            
+        })
     }
     
     
@@ -115,7 +143,33 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     //VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        var user = PFUser.query()
         
+        user?.whereKey("username", equalTo: PFUser.current()?.username)
+        
+        user?.findObjectsInBackground(block: { (objects, error) in
+            
+            if let persons = objects {
+                
+                for object in persons {
+                    
+                    if let person = object as? PFObject {
+                        
+                        self.locationButton.setTitle((person["resort"] as! String), for: .normal)
+                        
+                        
+                    }
+                    
+                }
+                
+                
+            }
+            
+        })
+        locationButton.layer.cornerRadius = 10
+        locationButton.clipsToBounds = true
+        locationButton.layer.borderWidth = 1
+        locationButton.layer.borderColor = UIColor.black.cgColor
         //this defines where on the map these points will be placed
         let coords = [Alta, Snowbird, Brighton, Solitude, ParkCity, DeerValley, SnowBasin, Jackson, SunValley, AspenHighlands, Breckenridge, Steamboat, Telluride, Keystone, Mammoth, BearMountain, SquawValley]
 
@@ -146,6 +200,13 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         
         profileButton.imageView?.contentMode = .scaleAspectFit
         
+        let userLocation: CLLocation = locationManager.location!
+        
+        let latitude = userLocation.coordinate.latitude
+        
+        let longitude = userLocation.coordinate.longitude
+        
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         //we'll use this as a quick tutorial for new users eventually
         
@@ -307,10 +368,18 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     }
     
     func sendPush(){
-        let push = PFPush()
-        push.setChannel("Elijah")
-        push.setMessage("Elijah, did you get this notification?")
-        push.sendInBackground()
+        let resortString: String = locationButton.title(for: .normal)!
+        PFCloud.callFunction(inBackground: "findGuide", withParameters: ["email":resortString]) { (response, error) in
+            if let error = error {
+                //If it fails, maybe display a message with code inside here
+                print(error.localizedDescription)
+            } else {
+                //else it was successful, maybe display "success, email sent" on screen here.
+                let responseString = response as? String
+                print(responseString)
+            }
+            
+        }
     }
     // Here we add disclosure button inside annotation window
     

@@ -239,6 +239,17 @@
                                     <action selector="ToProfile:" destination="5Ts-PL-cP4" eventType="touchUpInside" id="LQZ-xu-9va"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDt-Ql-BJZ">
+                                <rect key="frame" x="26" y="509" width="322" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Current Resort: ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="locationChooser:" destination="5Ts-PL-cP4" eventType="touchUpInside" id="ovR-hS-Qc0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -251,8 +262,11 @@
                             <constraint firstItem="HFc-Je-IZ6" firstAttribute="leading" secondItem="HQ4-NY-4Kw" secondAttribute="leading" constant="291" id="MCL-RU-jR3"/>
                             <constraint firstItem="EOp-he-4Hk" firstAttribute="top" secondItem="B9c-WD-ZPj" secondAttribute="top" id="Mhd-uy-XOa"/>
                             <constraint firstItem="2Wb-bo-W78" firstAttribute="leading" secondItem="HQ4-NY-4Kw" secondAttribute="leading" id="Uuj-2S-SAe"/>
+                            <constraint firstItem="2Wb-bo-W78" firstAttribute="top" secondItem="IDt-Ql-BJZ" secondAttribute="bottom" constant="50" id="XYz-6m-rWZ"/>
                             <constraint firstItem="EOp-he-4Hk" firstAttribute="trailing" secondItem="HQ4-NY-4Kw" secondAttribute="trailing" id="ZzQ-os-GuH"/>
+                            <constraint firstItem="IDt-Ql-BJZ" firstAttribute="leading" secondItem="HQ4-NY-4Kw" secondAttribute="leading" constant="26" id="jkX-1F-DqL"/>
                             <constraint firstItem="HFc-Je-IZ6" firstAttribute="trailing" secondItem="EOp-he-4Hk" secondAttribute="trailing" id="lqa-Qt-6c9"/>
+                            <constraint firstItem="HQ4-NY-4Kw" firstAttribute="trailing" secondItem="IDt-Ql-BJZ" secondAttribute="trailing" constant="27" id="nnn-fE-u83"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HQ4-NY-4Kw"/>
                     </view>
@@ -261,6 +275,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="zdj-08-8Bl"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationButton" destination="IDt-Ql-BJZ" id="c6z-zX-siV"/>
                         <outlet property="mapView" destination="EOp-he-4Hk" id="wQm-GR-VmQ"/>
                         <outlet property="profileButton" destination="HFc-Je-IZ6" id="KV4-Se-tmO"/>
                         <segue destination="TDs-0r-hmt" kind="show" identifier="toProfile" id="O1y-gI-R9s"/>
@@ -270,7 +285,7 @@
                 <searchDisplayController searchResultsTitle="" id="kO0-DQ-O6X" customClass="SearchTrends" customModule="YourGuideSwift" customModuleProvider="target"/>
                 <searchDisplayController id="w8K-pc-OXE" customClass="TrendsSearchDisplayer" customModule="YourGuideSwift" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-1260" y="-27"/>
+            <point key="canvasLocation" x="-1260" y="-27.436281859070466"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="uhS-Ed-fhk">
@@ -1244,6 +1259,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKv-l8-eGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2122.4000000000001" y="948.57571214392806"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="CAn-fR-FNn">
+            <objects>
+                <viewController storyboardIdentifier="locationViewController" id="590-45-vmW" customClass="locationViewController" customModule="YourGuideSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lMX-LB-tEX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyp-WT-XbE">
+                                <rect key="frame" x="120" y="516" width="134" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="myx-KD-Bk5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Choose"/>
+                                <connections>
+                                    <action selector="done:" destination="590-45-vmW" eventType="touchUpInside" id="iRj-j7-tWW"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVI-HC-34Q">
+                                <rect key="frame" x="0.0" y="120" width="375" height="300"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="590-45-vmW" id="tvp-DX-lKc"/>
+                                    <outlet property="delegate" destination="590-45-vmW" id="ya8-Or-1QD"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vVI-HC-34Q" firstAttribute="top" secondItem="imt-ra-e1h" secondAttribute="top" constant="100" id="6ys-PP-pg5"/>
+                            <constraint firstItem="vVI-HC-34Q" firstAttribute="leading" secondItem="lMX-LB-tEX" secondAttribute="leading" id="UEr-VM-cDg"/>
+                            <constraint firstItem="lyp-WT-XbE" firstAttribute="centerX" secondItem="lMX-LB-tEX" secondAttribute="centerX" id="Z64-CP-4Um"/>
+                            <constraint firstItem="lyp-WT-XbE" firstAttribute="top" secondItem="vVI-HC-34Q" secondAttribute="bottom" constant="96" id="ea1-0b-IPb"/>
+                            <constraint firstItem="vVI-HC-34Q" firstAttribute="centerX" secondItem="lyp-WT-XbE" secondAttribute="centerX" id="wFh-4r-uex"/>
+                            <constraint firstItem="imt-ra-e1h" firstAttribute="bottom" secondItem="lyp-WT-XbE" secondAttribute="bottom" constant="121" id="x2b-Vb-1EF"/>
+                            <constraint firstItem="lyp-WT-XbE" firstAttribute="leading" secondItem="imt-ra-e1h" secondAttribute="leading" constant="120" id="zdU-gS-1Cd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="imt-ra-e1h"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationPicker" destination="vVI-HC-34Q" id="zGD-kv-rvY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fH-wJ-l7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1268" y="629.2353823088456"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7ly-kT-ZeI">

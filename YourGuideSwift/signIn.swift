@@ -88,7 +88,21 @@ class signIn: UIViewController {
                                     }
                                     
                                 } else {
-                                    
+                            
+                                    //Retrieve pointer of installation & user
+                                    let installation: PFInstallation = PFInstallation.current()!
+                                    let user: PFUser = PFUser.current()!
+                            
+                                    //Set column "user" in installation to a pointer of the current user
+                                    installation["user"] = user
+                                    //Set column "installation" in user to pointer of current installation
+                                    user["installation"] = installation
+                                    //both the user and installation objects inside Parse have a pointer to eachother,
+                                    //creating a relationship between the two objects
+                            
+                                    installation.saveInBackground()
+                                    object.saveInBackground()
+                            
                                     print("Logged In")
                                     
                                     self.performSegue(withIdentifier: "loggedIn", sender: self)

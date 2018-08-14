@@ -7,15 +7,66 @@
 //
 
 import UIKit
+import Parse
 
-class locationViewController: UIViewController {
-
+class locationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    var current = "Alta"
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return titles[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return titles.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        current = titles[row]
+        print(current)
+    }
+        let titles = ["Alta", "Snowbird", "Brighton", "Solitude", "Park City Mountain Resort", "Deer Valley", "Snowbasin", "Jackson Hole Ski Area", "Sun Valley", "Aspen Highlands Ski Resort", "Breckenridge", "Steamboat", "Telluride", "Keystone", "Mammoth", "Bear Mountain Ski Resort", "Squaw Valley"]
+    
+    @IBOutlet weak var locationPicker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func done(_ sender: Any) {
+        
+        var user = PFUser.query()
+        
+        user?.whereKey("username", equalTo: PFUser.current()?.username)
+        
+        user?.findObjectsInBackground(block: { (objects, error) in
+            
+            if let persons = objects {
+                
+                for object in persons {
+                    
+                    if let person = object as? PFObject {
+                        
+                        person.setValue(self.current, forKey: "resort")
+                        person.saveInBackground()
+                        
+                    }
+                    
+                }
+                
+                
+            }
+            
+        })
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
