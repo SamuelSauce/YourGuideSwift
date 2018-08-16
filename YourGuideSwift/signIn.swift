@@ -101,6 +101,7 @@ class signIn: UIViewController {
                                     //creating a relationship between the two objects
                             
                                     installation.saveInBackground()
+                                    user.saveInBackground()
                                     object.saveInBackground()
                             
                                     print("Logged In")

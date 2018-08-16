@@ -250,6 +250,13 @@
                                     <action selector="locationChooser:" destination="5Ts-PL-cP4" eventType="touchUpInside" id="ovR-hS-Qc0"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XNe-js-rhJ">
+                                <rect key="frame" x="16" y="41" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="guidingOn:" destination="5Ts-PL-cP4" eventType="valueChanged" id="6hx-zR-bkT"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -275,6 +282,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="zdj-08-8Bl"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="guidingSwitch" destination="XNe-js-rhJ" id="59e-c3-Jjv"/>
                         <outlet property="locationButton" destination="IDt-Ql-BJZ" id="c6z-zX-siV"/>
                         <outlet property="mapView" destination="EOp-he-4Hk" id="wQm-GR-VmQ"/>
                         <outlet property="profileButton" destination="HFc-Je-IZ6" id="KV4-Se-tmO"/>

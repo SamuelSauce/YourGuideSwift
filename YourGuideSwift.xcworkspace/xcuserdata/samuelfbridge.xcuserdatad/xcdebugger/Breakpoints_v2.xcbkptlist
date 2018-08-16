@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YourGuideSwift/Map.swift"
-            timestampString = "555952431.451533"
+            timestampString = "556055511.52386"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YourGuideSwift/Map.swift"
-            timestampString = "555952431.4518991"
+            timestampString = "556055511.524183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
             landmarkName = "sendPush()"
             landmarkType = "7">
             <Locations>
@@ -42,12 +42,12 @@
                   moduleName = "YourGuideSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/samuelfbridge/Desktop/YourGuideSwift/YourGuideSwift/Map.swift"
-                  timestampString = "555804248.375941"
+                  timestampString = "556054532.018361"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "371"
-                  endingLineNumber = "371"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "378"
+                  endingLineNumber = "378"
+                  offsetFromSymbolStart = "496">
                </Location>
                <Location
                   shouldBeEnabled = "No"
@@ -57,11 +57,11 @@
                   moduleName = "YourGuideSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/samuelfbridge/Desktop/YourGuideSwift/YourGuideSwift/Map.swift"
-                  timestampString = "555804248.377813"
+                  timestampString = "556054532.020309"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "372"
-                  endingLineNumber = "372"
+                  startingLineNumber = "379"
+                  endingLineNumber = "379"
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>
@@ -70,49 +70,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YourGuideSwift/Map.swift"
-            timestampString = "555952431.452144"
+            timestampString = "556055511.5244"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
             landmarkName = "sendPush()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YourGuideSwift.Map.sendPush() -&gt; ()"
-                  moduleName = "YourGuideSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samuelfbridge/Desktop/YourGuideSwift/YourGuideSwift/Map.swift"
-                  timestampString = "555952431.552237"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "372"
-                  endingLineNumber = "372"
-                  offsetFromSymbolStart = "496">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in YourGuideSwift.Map.sendPush() -&gt; ()"
-                  moduleName = "YourGuideSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samuelfbridge/Desktop/YourGuideSwift/YourGuideSwift/Map.swift"
-                  timestampString = "555952431.554386"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "373"
-                  endingLineNumber = "373"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 import Parse
-
+import Alamofire
 class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate {
     //ANNOTATION DECLARED
     let annotation = MKPointAnnotation()
@@ -18,7 +18,12 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     
     //sets titles for given coords
     let titles = ["Alta", "Snowbird", "Brighton", "Solitude", "Park City Mountain Resort", "Deer Valley", "Snowbasin", "Jackson Hole Ski Area", "Sun Valley", "Aspen Highlands Ski Resort", "Breckenridge", "Steamboat", "Telluride", "Keystone", "Mammoth", "Bear Mountain Ski Resort", "Squaw Valley"]
-    
+
+    @IBOutlet weak var guidingSwitch: UISwitch!
+    @IBAction func guidingOn(_ sender: Any) {
+        PFUser.current()!["isGuiding"] = guidingSwitch.isOn
+        PFUser.current()!.saveInBackground()
+    }
     //Resorts added to the map
     let Alta = CLLocation(latitude: 40.588329, longitude: -111.638068)
     
@@ -369,7 +374,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     
     func sendPush(){
         let resortString: String = locationButton.title(for: .normal)!
-        PFCloud.callFunction(inBackground: "findGuide", withParameters: ["email":resortString]) { (response, error) in
+        /*
+        PFCloud.callFunction(inBackground: "findGuide", withParameters: ["resort":resortString]) { (response, error) in
             if let error = error {
                 //If it fails, maybe display a message with code inside here
                 print(error.localizedDescription)
@@ -380,6 +386,28 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
             }
             
         }
+ */
+        /*
+        $0.applicationId = "JaLYLJdBNFhpDM4xIDCorQO1Dg2KBDOZLTW5AFbC"
+        $0.clientKey = "71A6ZGOc7p8cgPKJLrxHu1FHKXXkL9OAJzwxSHxC"
+        $0.server = "https://parseapi.back4app.com"
+         */
+        // Add Headers
+        
+        let headers = [
+            "X-Parse-REST-API-Key":"sGh02Db6uS53GRw9dWDVWh5b6ONufyBelhZpJDEC",
+            "X-Parse-Application-Id":"JaLYLJdBNFhpDM4xIDCorQO1Dg2KBDOZLTW5AFbC",
+            "Content-Type":"application/json",
+            ]
+        
+        // Form URL-Encoded Body
+        let body = [
+            "resort": resortString,
+            ]
+        
+        // Fetch Request
+        Alamofire.request("https://parseapi.back4app.com/functions/findGuide", method: .post, parameters: body, encoding: URLEncoding.default, headers: headers)
+        
     }
     // Here we add disclosure button inside annotation window
     

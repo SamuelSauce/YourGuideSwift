@@ -9,5 +9,6 @@ target 'YourGuideSwift' do
 
 	pod "Parse"
 	pod 'IQKeyboardManagerSwift'
+	pod 'Alamofire'
 
 end
