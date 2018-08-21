@@ -36,8 +36,7 @@ class Profile: UIViewController, UINavigationControllerDelegate {
     
     //back button to Map
     @IBAction func goBackToMap(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "backToMap", sender: self)
+        navigationController?.popViewController(animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YourGuideSwift/Map.swift"
-            timestampString = "556055511.52386"
+            timestampString = "556514841.308082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YourGuideSwift/Map.swift"
-            timestampString = "556055511.524183"
+            timestampString = "556514841.308442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
             landmarkName = "sendPush()"
             landmarkType = "7">
             <Locations>
@@ -73,13 +73,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YourGuideSwift/Map.swift"
-            timestampString = "556055511.5244"
+            filePath = "YourGuideSwift/signIn.swift"
+            timestampString = "556512385.727201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
-            landmarkName = "sendPush()"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "signIn(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

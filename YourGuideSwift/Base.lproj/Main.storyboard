@@ -282,6 +282,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="zdj-08-8Bl"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="findGuideButton" destination="2Wb-bo-W78" id="eru-z5-iaA"/>
                         <outlet property="guidingSwitch" destination="XNe-js-rhJ" id="59e-c3-Jjv"/>
                         <outlet property="locationButton" destination="IDt-Ql-BJZ" id="c6z-zX-siV"/>
                         <outlet property="mapView" destination="EOp-he-4Hk" id="wQm-GR-VmQ"/>
@@ -1623,8 +1624,8 @@
         <segue reference="4l3-pd-vIO"/>
         <segue reference="O1y-gI-R9s"/>
         <segue reference="v6P-NU-Nta"/>
-        <segue reference="EW2-TR-avf"/>
+        <segue reference="Owq-j6-Uw8"/>
         <segue reference="ezO-Sf-wZz"/>
-        <segue reference="SZh-a6-olY"/>
+        <segue reference="7g2-XF-RPY"/>
     </inferredMetricsTieBreakers>
 </document>

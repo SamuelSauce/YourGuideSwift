@@ -16,7 +16,7 @@ class Settings: UIViewController, UITableViewDelegate, UITableViewDataSource, Se
         if let tappedIndex = settingsTV.indexPath(for: sender) {
             
             PFUser.logOut()
-            
+            navigationController?.setNavigationBarHidden(true, animated: true)
             performSegue(withIdentifier: "backToLogin", sender: self)
             
             
@@ -43,7 +43,7 @@ class Settings: UIViewController, UITableViewDelegate, UITableViewDataSource, Se
         
     @IBAction func back(_ sender: Any) {
     
-        performSegue(withIdentifier: "fromSettingsToProfile", sender: self)
+        navigationController?.popViewController(animated: true)
     }
     
     

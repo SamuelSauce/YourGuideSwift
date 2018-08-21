@@ -66,7 +66,7 @@ class EditProfile: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     @IBAction func cancel(_ sender: Any) {
         
-        performSegue(withIdentifier: "backToSettings", sender: self)
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -124,7 +124,7 @@ class EditProfile: UIViewController, UINavigationControllerDelegate, UIImagePick
                         }
                         
                     }
-                    self.performSegue(withIdentifier: "backToSettings", sender: self)
+                    self.navigationController?.popViewController(animated: true)
 
                     
                 }
