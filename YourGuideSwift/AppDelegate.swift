@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import IQKeyboardManagerSwift
 import UserNotifications
-
+var username = ""
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -137,6 +137,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
+        // Print notification payload data
+        print("Push notification received.")
+        guard
+            let aps = data[AnyHashable("aps")] as? NSDictionary,
+            let alert = aps["alert"] as? String
+            else {
+                // handle any error here
+                print("Error")
+                return
+        }
+        print("Title:\(alert)")
+        username = alert
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc : UIViewController
+        
+        vc = storyboard.instantiateViewController(withIdentifier: "RiderViewController")
+        
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+        
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

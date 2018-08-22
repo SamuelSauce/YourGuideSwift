@@ -80,7 +80,7 @@ class SignUpName: UIViewController, UINavigationControllerDelegate, UIImagePicke
             changeSettings["rating"] = 0
             
             changeSettings["guide"] = false
-            
+            //Crashes if user does not put a profile picture.
             let imageData = UIImageJPEGRepresentation(newProfilePic.image!, 1)
             
             let imageFile = PFFile(name: "image.png", data: imageData!)

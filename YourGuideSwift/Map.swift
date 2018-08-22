@@ -26,7 +26,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         PFUser.current()!["isGuiding"] = guidingSwitch.isOn
         PFUser.current()!.saveInBackground()
         if PFUser.current()!["isGuiding"] as! Bool == true{
-            findGuideButton.backgroundColor = UIColor.blue
+            findGuideButton.backgroundColor = UIColor.cyan
             findGuideButton.setTitle("Guiding", for: .normal)
         }else{
             findGuideButton.backgroundColor = UIColor.black
@@ -173,7 +173,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
                 for object in persons {
                     
                     if let person = object as? PFObject {
-                        
+                        //Also error here, if there is no resort set when signing up it will crash upon first sign in.
                         self.locationButton.setTitle((person["resort"] as! String), for: .normal)
                         
                         
@@ -219,6 +219,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         
         profileButton.imageView?.contentMode = .scaleAspectFit
         
+        //Crashes because no default location
         let userLocation: CLLocation = locationManager.location!
         
         let latitude = userLocation.coordinate.latitude
@@ -388,8 +389,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     
     func sendPush(){
         let resortString: String = locationButton.title(for: .normal)!
-        
-        PFCloud.callFunction(inBackground: "findGuide", withParameters: ["resort":resortString]) { (response, error) in
+        let usernameString: String = PFUser.current()!["username"] as! String
+        PFCloud.callFunction(inBackground: "findGuide", withParameters: ["resort":resortString, "username":PFUser.current()!["username"]]) { (response, error) in
             if let error = error {
                 //If it fails, maybe display a message with code inside here
                 print(error.localizedDescription)
