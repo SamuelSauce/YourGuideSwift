@@ -109,6 +109,76 @@ class Profile: UIViewController, UINavigationControllerDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        inSettings = false
+        
+        self.navigationController?.navigationBar.isHidden = false
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        //self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"profile edit"), style: .plain, target: self, action: nil)
+        
+        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
+        profileImage.clipsToBounds = true
+        
+        whiteBorder.layer.cornerRadius = whiteBorder.frame.size.width/2
+        whiteBorder.clipsToBounds = true
+        whiteBorder.layer.backgroundColor = UIColor.white.cgColor
+        
+        
+        
+        let query = PFQuery(className: "UserSettings")
+        
+        query.whereKey("userid", equalTo: PFUser.current()?.objectId)
+        
+        query.findObjectsInBackground(block: { (objects, error) in
+            
+            if let changedSettings = objects {
+                
+                for object in changedSettings {
+                    
+                    if let changeSettings = object as? PFObject {
+                        
+                        
+                        self.name.text = (changeSettings["first"] as! String)
+                        
+                        self.navigationItem.title = self.name.text
+                        
+                        self.bioTextField.text = (changeSettings["bio"] as! String)
+                        
+                        self.locationLabel.text = (changeSettings["location"] as! String)
+                        
+                        self.experienceLabel.text = (changeSettings["experienceLevel"] as! String)
+                        
+                        var userRating = changeSettings["rating"] as! NSNumber
+                        
+                        self.rating.setTitle("\(userRating)" as! String, for: [])
+                        
+                        //RETRIEVES IMAGE FROM PARSE
+                        let profileImage = changeSettings.object(forKey: "imageFile") as? PFFile
+                        
+                        profileImage!.getDataInBackground({ (data, error) in
+                            
+                            if let imageData = data {
+                                let downloadedImage = UIImage(data: imageData)!
+                                self.profileImage.image = downloadedImage
+                            }
+                            
+                        })
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+                
+            }
+            
+        })
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         inSettings = false
     }

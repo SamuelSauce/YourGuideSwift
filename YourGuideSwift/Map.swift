@@ -115,11 +115,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     //view did appear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if PFUser.current()!["isGuide"] as! Bool == false{
-            guidingSwitch.isHidden = true
-        }else{
-            guidingSwitch.isHidden = false
-        }
+        guidingSwitch.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
@@ -139,8 +135,11 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
                     
                     if let person = object as? PFObject {
                         
-                        self.locationButton.setTitle((person["resort"] as! String), for: .normal)
-                        
+                        if person["resort"] != nil{
+                            self.locationButton.setTitle((person["resort"] as! String), for: .normal)
+                        }else{
+                            self.locationButton.setTitle("Select Resort", for: .normal)
+                        }
                         
                     }
                     
@@ -150,6 +149,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
             }
             
         })
+        
     }
     
     
@@ -174,8 +174,11 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
                     
                     if let person = object as? PFObject {
                         //Also error here, if there is no resort set when signing up it will crash upon first sign in.
-                        self.locationButton.setTitle((person["resort"] as! String), for: .normal)
-                        
+                        if person["resort"] != nil{
+                            self.locationButton.setTitle((person["resort"] as! String), for: .normal)
+                        }else{
+                            self.locationButton.setTitle("Select Resort", for: .normal)
+                        }
                         
                     }
                     
@@ -185,6 +188,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
             }
             
         })
+        
         locationButton.layer.cornerRadius = 10
         locationButton.clipsToBounds = true
         locationButton.layer.borderWidth = 1
@@ -218,13 +222,15 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         locationManager.startUpdatingLocation()
         
         profileButton.imageView?.contentMode = .scaleAspectFit
-        
-        //Crashes because no default location
-        let userLocation: CLLocation = locationManager.location!
-        
-        let latitude = userLocation.coordinate.latitude
-        
-        let longitude = userLocation.coordinate.longitude
+        var latitude = 40.7608
+        var longitude = 111.8910
+        if locationManager.location != nil{
+            latitude = locationManager.location!.coordinate.latitude
+            
+            longitude = locationManager.location!.coordinate.longitude
+        }else{
+            
+        }
         
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
@@ -355,7 +361,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         
     }
     
-    /*
+    
     //Setting up map & location zoom
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -365,9 +371,9 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         
         let longitude = userLocation.coordinate.longitude
         
-        let latDelta: CLLocationDegrees = 0.05
+        let latDelta: CLLocationDegrees = 0.2
         
-        let lonDelta: CLLocationDegrees = 0.05
+        let lonDelta: CLLocationDegrees = 0.2
         
         let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
         
@@ -380,7 +386,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         locationManager.stopUpdatingLocation()
         
         
-    } */
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

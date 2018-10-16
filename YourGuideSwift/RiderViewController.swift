@@ -14,7 +14,9 @@ class RiderViewController: UIViewController {
     @IBOutlet weak var riderPicture: UIImageView!
     @IBOutlet weak var acceptButton: UIButton!
     @IBOutlet weak var declineButton: UIButton!
+    @IBOutlet weak var riderBio: UITextView!
     
+    @IBOutlet weak var whiteBackground: UIImageView!
     @IBAction func declineClicker(_ sender: Any) {
         PFUser.current()!["isGuiding"] = false
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -24,6 +26,14 @@ class RiderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        riderPicture.layer.cornerRadius = riderPicture.frame.size.width/2
+        riderPicture.clipsToBounds = true
+        
+        whiteBackground.layer.cornerRadius = whiteBackground.frame.size.width/2
+        whiteBackground.clipsToBounds = true
+        whiteBackground.layer.backgroundColor = UIColor.white.cgColor
+        
         let query = PFQuery(className: "UserSettings")
         
         query.whereKey("userid", equalTo: username)
@@ -36,8 +46,10 @@ class RiderViewController: UIViewController {
                     
                     if let changeSettings = object as? PFObject {
                         
-                        
-                        self.riderLabel.text = (changeSettings["first"] as! String)
+
+                        var riderText = (changeSettings["first"] as! String)
+                        riderText.append(" would like to ride with you!")
+                        self.riderLabel.text = "a;lskdfjas;lkdjfas;ldfj"
                         
                         var userRating = changeSettings["rating"] as! NSNumber
                         
@@ -82,12 +94,18 @@ class RiderViewController: UIViewController {
                     if let changeSettings = object as? PFObject {
                         
                         
-                        self.riderLabel.text = (changeSettings["first"] as! String)
+                        var riderText = (changeSettings["first"] as! String)
+                        riderText.append(" would like to ride with you!")
+                        self.riderLabel.text = riderText
                         
                         var userRating = changeSettings["rating"] as! NSNumber
-                        
                         //self.rating.setTitle("\(userRating)" as! String, for: [])
                         
+                        var bioText = "About "
+                        bioText.append(changeSettings["first"] as! String)
+                        bioText.append(": ")
+                        bioText.append(changeSettings["bio"] as! String)
+                        self.riderBio.text = bioText
                         //RETRIEVES IMAGE FROM PARSE
                         let profileImage = changeSettings.object(forKey: "imageFile") as? PFFile
                         

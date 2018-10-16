@@ -14,6 +14,7 @@
 		683DE4FD20E835410046CBE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683DE4FB20E835410046CBE3 /* Main.storyboard */; };
 		683DE4FF20E835420046CBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683DE4FE20E835420046CBE3 /* Assets.xcassets */; };
 		683DE50220E835420046CBE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683DE50020E835420046CBE3 /* LaunchScreen.storyboard */; };
+		68822140215052DC001406F4 /* RidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6882213F215052DC001406F4 /* RidingViewController.swift */; };
 		68F2454F212CDA1C00298504 /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F2454E212CDA1C00298504 /* RiderViewController.swift */; };
 		68FBDC812120C0F500D9F2A6 /* locationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FBDC802120C0F500D9F2A6 /* locationViewController.swift */; };
 		B6250379210CF22A0039F5E0 /* SignUpName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6250378210CF22A0039F5E0 /* SignUpName.swift */; };
@@ -38,6 +39,7 @@
 		683DE4FE20E835420046CBE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		683DE50120E835420046CBE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		683DE50320E835420046CBE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6882213F215052DC001406F4 /* RidingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidingViewController.swift; sourceTree = "<group>"; };
 		68F2454E212CDA1C00298504 /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
 		68FBDC802120C0F500D9F2A6 /* locationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationViewController.swift; sourceTree = "<group>"; };
 		6C1A50BC7D993794087F46EB /* Pods_YourGuideSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourGuideSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				B6250380210D02E20039F5E0 /* SettingsCell.swift */,
 				B625037C210CFE170039F5E0 /* EditProfile.swift */,
 				68F2454E212CDA1C00298504 /* RiderViewController.swift */,
+				6882213F215052DC001406F4 /* RidingViewController.swift */,
 				683DE4FB20E835410046CBE3 /* Main.storyboard */,
 				683DE4FE20E835420046CBE3 /* Assets.xcassets */,
 				683DE50020E835420046CBE3 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 				B65A7EE720FAC3E800E2A9C9 /* signIn.swift in Sources */,
 				B625037F210D02710039F5E0 /* Settings.swift in Sources */,
 				B625037B210CF70B0039F5E0 /* SignUpAbout.swift in Sources */,
+				68822140215052DC001406F4 /* RidingViewController.swift in Sources */,
 				B65A7EE520FAB73100E2A9C9 /* Login.swift in Sources */,
 				B6250379210CF22A0039F5E0 /* SignUpName.swift in Sources */,
 				B6D2252B20F44F2F003BCAF6 /* LogoPage.swift in Sources */,
