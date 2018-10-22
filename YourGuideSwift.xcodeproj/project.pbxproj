@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07DF85E5585B126DFC253829 /* Pods_YourGuideSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1A50BC7D993794087F46EB /* Pods_YourGuideSwift.framework */; };
+		682C25F0217CF29700DAB50F /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682C25EF217CF29700DAB50F /* GuideViewController.swift */; };
 		683DE4F620E835410046CBE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DE4F520E835410046CBE3 /* AppDelegate.swift */; };
 		683DE4F820E835410046CBE3 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DE4F720E835410046CBE3 /* Map.swift */; };
 		683DE4FA20E835410046CBE3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DE4F920E835410046CBE3 /* Profile.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0F8A6F007ED6760C75A3E2D1 /* Pods-YourGuideSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourGuideSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-YourGuideSwift/Pods-YourGuideSwift.release.xcconfig"; sourceTree = "<group>"; };
+		682C25EF217CF29700DAB50F /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		6830BC4820F44E2200CF7EE7 /* YourGuideSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YourGuideSwift.entitlements; sourceTree = "<group>"; };
 		683DE4F220E835410046CBE3 /* YourGuideSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourGuideSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683DE4F520E835410046CBE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				B625037C210CFE170039F5E0 /* EditProfile.swift */,
 				68F2454E212CDA1C00298504 /* RiderViewController.swift */,
 				6882213F215052DC001406F4 /* RidingViewController.swift */,
+				682C25EF217CF29700DAB50F /* GuideViewController.swift */,
 				683DE4FB20E835410046CBE3 /* Main.storyboard */,
 				683DE4FE20E835420046CBE3 /* Assets.xcassets */,
 				683DE50020E835420046CBE3 /* LaunchScreen.storyboard */,
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				683DE4FA20E835410046CBE3 /* Profile.swift in Sources */,
+				682C25F0217CF29700DAB50F /* GuideViewController.swift in Sources */,
 				683DE4F620E835410046CBE3 /* AppDelegate.swift in Sources */,
 				B625037D210CFE170039F5E0 /* EditProfile.swift in Sources */,
 				68F2454F212CDA1C00298504 /* RiderViewController.swift in Sources */,

@@ -53,7 +53,6 @@ class SignUpEmailandPass: UIViewController {
             
             let user = PFUser()
 
-            
             user.email = emailTextField.text
             user.username = phone
             user.password = passwordTextField.text

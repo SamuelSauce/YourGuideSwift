@@ -140,6 +140,13 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
                         }else{
                             self.locationButton.setTitle("Select Resort", for: .normal)
                         }
+                        if person["isGuiding"] != nil{
+                            if person["isGuiding"] as! Bool == true{
+                                self.findGuideButton.backgroundColor = UIColor.cyan
+                                self.findGuideButton.setTitle("Guiding", for: .normal)
+                                self.guidingSwitch.isOn = true
+                            }
+                        }
                         
                     }
                     

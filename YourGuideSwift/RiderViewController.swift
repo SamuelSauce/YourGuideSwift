@@ -24,6 +24,20 @@ class RiderViewController: UIViewController {
         UIApplication.shared.keyWindow?.rootViewController = viewController
     }
     
+    @IBAction func acceptClicker(_ sender: Any) {
+        PFCloud.callFunction(inBackground: "acceptRide", withParameters: ["ridername":username, "username":PFUser.current()!["username"]]) { (response, error) in
+            if let error = error {
+                //If it fails, maybe display a message with code inside here
+                print(error.localizedDescription)
+            } else {
+                //else it was successful, maybe display "success, email sent" on screen here.
+                let responseString = response as? String
+                print(responseString)
+            }
+            
+        }
+        PFUser.current()!["isGuiding"] = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

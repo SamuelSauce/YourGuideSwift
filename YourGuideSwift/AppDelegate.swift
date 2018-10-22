@@ -138,27 +138,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
-        // Print notification payload data
-        print("Push notification received.")
-        guard
-            let aps = data[AnyHashable("aps")] as? NSDictionary,
-            let alert = aps["alert"] as? String
-            else {
-                // handle any error here
-                print("Error")
-                return
+        if PFUser.current()!["isGuiding"] != nil{
+            if PFUser.current()!["isGuiding"] as! Bool == true{
+                // Print notification payload data
+                print("Push notification received.")
+                guard
+                    let aps = data[AnyHashable("aps")] as? NSDictionary,
+                    let alert = aps["alert"] as? String
+                    else {
+                        // handle any error here
+                        print("Error")
+                        return
+                }
+                print("Title:\(alert)")
+                username = alert
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                var vc : UIViewController
+                
+                vc = storyboard.instantiateViewController(withIdentifier: "RiderViewController")
+                
+                self.window?.rootViewController = vc
+                self.window?.makeKeyAndVisible()
+                
+            }else{
+                // Print notification payload data
+                print("Push notification received.")
+                guard
+                    let aps = data[AnyHashable("aps")] as? NSDictionary,
+                    let alert = aps["alert"] as? String
+                    else {
+                        // handle any error here
+                        print("Error")
+                        return
+                }
+                print("Title:\(alert)")
+                username = alert
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                var vc : UIViewController
+                
+                vc = storyboard.instantiateViewController(withIdentifier: "GuideViewController")
+                
+                self.window?.rootViewController = vc
+                self.window?.makeKeyAndVisible()
+            }
+        }else{
+            // Print notification payload data
+            print("Push notification received.")
+            guard
+                let aps = data[AnyHashable("aps")] as? NSDictionary,
+                let alert = aps["alert"] as? String
+                else {
+                    // handle any error here
+                    print("Error")
+                    return
+            }
+            print("Title:\(alert)")
+            username = alert
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var vc : UIViewController
+            
+            vc = storyboard.instantiateViewController(withIdentifier: "GuideViewController")
+            
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            
         }
-        print("Title:\(alert)")
-        username = alert
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var vc : UIViewController
-        
-        vc = storyboard.instantiateViewController(withIdentifier: "RiderViewController")
-        
-        self.window?.rootViewController = vc
-        self.window?.makeKeyAndVisible()
-        
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -192,7 +239,75 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler:
         @escaping (UNNotificationPresentationOptions) -> Void) {
-        PFPush.handle(notification.request.content.userInfo)
-        completionHandler(.alert)
+        //PFPush.handle(notification.request.content.userInfo)
+        if PFUser.current()!["isGuiding"] != nil{
+            if PFUser.current()!["isGuiding"] as! Bool == true{
+                // Print notification payload data
+                print("Push notification received.")
+                guard
+                    let aps = notification.request.content.userInfo[AnyHashable("aps")] as? NSDictionary,
+                    let alert = aps["alert"] as? String
+                    else {
+                        // handle any error here
+                        print("Error")
+                        return
+                }
+                print("Title:\(alert)")
+                username = alert
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                var vc : UIViewController
+                
+                vc = storyboard.instantiateViewController(withIdentifier: "RiderViewController")
+                
+                self.window?.rootViewController = vc
+                self.window?.makeKeyAndVisible()
+                
+            }else{
+                // Print notification payload data
+                print("Push notification received.")
+                guard
+                    let aps = notification.request.content.userInfo[AnyHashable("aps")] as? NSDictionary,
+                    let alert = aps["alert"] as? String
+                    else {
+                        // handle any error here
+                        print("Error")
+                        return
+                }
+                print("Title:\(alert)")
+                username = alert
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                var vc : UIViewController
+                
+                vc = storyboard.instantiateViewController(withIdentifier: "GuideViewController")
+                
+                self.window?.rootViewController = vc
+                self.window?.makeKeyAndVisible()
+                
+            }
+        }else{
+            // Print notification payload data
+            print("Push notification received.")
+            guard
+                let aps = notification.request.content.userInfo[AnyHashable("aps")] as? NSDictionary,
+                let alert = aps["alert"] as? String
+                else {
+                    // handle any error here
+                    print("Error")
+                    return
+            }
+            print("Title:\(alert)")
+            username = alert
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var vc : UIViewController
+            
+            vc = storyboard.instantiateViewController(withIdentifier: "GuideViewController")
+            
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            
+        }
     }
 }

@@ -90,6 +90,12 @@ class signIn: UIViewController {
                                 } else {
                             
                                     print("Logged In")
+                            
+                                    let installation: PFInstallation = PFInstallation.current()!
+                                    let user = PFUser.current()!
+                                    installation["user"] = user
+                                    user["installation"] = installation
+                                    installation.saveInBackground()
                                     
                                     self.performSegue(withIdentifier: "loggedIn", sender: self)
                                     
