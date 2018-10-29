@@ -37,7 +37,8 @@ class locationViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     @IBAction func done(_ sender: Any) {
-        
+        //Should be able to just do
+        //user = PFUser.current()?
         var user = PFUser.query()
         
         user?.whereKey("username", equalTo: PFUser.current()?.username)

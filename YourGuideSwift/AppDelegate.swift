@@ -85,6 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
         
     }
+    
     func getNotificationSettings() {
         UNUserNotificationCenter.current().getNotificationSettings { (settings) in
             print("Notification settings: \(settings)")
@@ -92,6 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.shared.registerForRemoteNotifications()
         }
     }
+    
     func saveInstallationObject(){
         if let installation = PFInstallation.current(){
             installation.saveInBackground {
