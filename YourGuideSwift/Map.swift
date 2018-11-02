@@ -172,54 +172,62 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         super.viewDidLoad()
         self.guidingSwitch.isHidden = true
         
-        let currentUser = PFUser.current()!
-        if let user = currentUser as? PFObject{
-            if currentUser["resort"] != nil{
-                self.locationButton.setTitle((currentUser["resort"] as! String), for: .normal)
+        var currentUser = PFUser.current()
+        if currentUser != nil {
+            if currentUser!["resort"] != nil{
+                self.locationButton.setTitle((currentUser!["resort"] as! String), for: .normal)
             }else{
                 self.locationButton.setTitle("Select Resort", for: .normal)
             }
             if PFUser.current()!["isGuide"] as! Bool == true{
                 self.guidingSwitch.isHidden = false
             }else{
-                currentUser["isGuiding"] = false
+                currentUser!["isGuiding"] = false
                 self.findGuideButton.backgroundColor = UIColor.black
                 self.findGuideButton.setTitle("Find a Guide", for: .normal)
             }
+        } else {
+            // Show the signup or login screen
         }
         
-        var user = PFUser.query()
-
-        user?.whereKey("username", equalTo: PFUser.current()?.username)
-
-        user?.findObjectsInBackground(block: { (objects, error) in
-
-            if let persons = objects {
-
-                for object in persons {
-
-                    if let person = object as? PFObject {
-                        //Also error here, if there is no resort set when signing up it will crash upon first sign in.
-                        if person["resort"] != nil{
-                            self.locationButton.setTitle((person["resort"] as! String), for: .normal)
-                        }else{
-                            self.locationButton.setTitle("Select Resort", for: .normal)
-                        }
-                        if person["isGuide"] as! Bool == true{
-                            self.guidingSwitch.isHidden = false
-                        }else{
-                            PFUser.current()!["isGuiding"] = false
-                            self.findGuideButton.backgroundColor = UIColor.black
-                            self.findGuideButton.setTitle("Find a Guide", for: .normal)
-                        }
-                    }
-
-                }
-
-
-            }
-
-        })
+        
+//        let currentUser = PFUser.current()!
+//        if let user = currentUser as? PFObject{
+//
+//        }
+//
+//        var user = PFUser.query()
+//
+//        user?.whereKey("username", equalTo: PFUser.current()?.username)
+//
+//        user?.findObjectsInBackground(block: { (objects, error) in
+//
+//            if let persons = objects {
+//
+//                for object in persons {
+//
+//                    if let person = object as? PFObject {
+//                        //Also error here, if there is no resort set when signing up it will crash upon first sign in.
+//                        if person["resort"] != nil{
+//                            self.locationButton.setTitle((person["resort"] as! String), for: .normal)
+//                        }else{
+//                            self.locationButton.setTitle("Select Resort", for: .normal)
+//                        }
+//                        if person["isGuide"] as! Bool == true{
+//                            self.guidingSwitch.isHidden = false
+//                        }else{
+//                            PFUser.current()!["isGuiding"] = false
+//                            self.findGuideButton.backgroundColor = UIColor.black
+//                            self.findGuideButton.setTitle("Find a Guide", for: .normal)
+//                        }
+//                    }
+//
+//                }
+//
+//
+//            }
+//
+//        })
         
         locationButton.layer.cornerRadius = 10
         locationButton.clipsToBounds = true
