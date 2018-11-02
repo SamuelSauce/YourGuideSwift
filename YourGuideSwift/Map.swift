@@ -16,6 +16,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     //Defines geoPoint as nil
     var geoPoint : CLLocationCoordinate2D! = nil
     
+    //let currentUser = PFUser.current()!
+    
     //sets titles for given coords
     let titles = ["Alta", "Snowbird", "Brighton", "Solitude", "Park City Mountain Resort", "Deer Valley", "Snowbasin", "Jackson Hole Ski Area", "Sun Valley", "Aspen Highlands Ski Resort", "Breckenridge", "Steamboat", "Telluride", "Keystone", "Mammoth", "Bear Mountain Ski Resort", "Squaw Valley"]
 
@@ -115,7 +117,6 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     //view did appear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guidingSwitch.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
@@ -169,16 +170,34 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
     //VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.guidingSwitch.isHidden = true
+        
+        let currentUser = PFUser.current()!
+        if let user = currentUser as? PFObject{
+            if currentUser["resort"] != nil{
+                self.locationButton.setTitle((currentUser["resort"] as! String), for: .normal)
+            }else{
+                self.locationButton.setTitle("Select Resort", for: .normal)
+            }
+            if PFUser.current()!["isGuide"] as! Bool == true{
+                self.guidingSwitch.isHidden = false
+            }else{
+                currentUser["isGuiding"] = false
+                self.findGuideButton.backgroundColor = UIColor.black
+                self.findGuideButton.setTitle("Find a Guide", for: .normal)
+            }
+        }
+        
         var user = PFUser.query()
-        
+
         user?.whereKey("username", equalTo: PFUser.current()?.username)
-        
+
         user?.findObjectsInBackground(block: { (objects, error) in
-            
+
             if let persons = objects {
-                
+
                 for object in persons {
-                    
+
                     if let person = object as? PFObject {
                         //Also error here, if there is no resort set when signing up it will crash upon first sign in.
                         if person["resort"] != nil{
@@ -186,14 +205,20 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
                         }else{
                             self.locationButton.setTitle("Select Resort", for: .normal)
                         }
-                        
+                        if person["isGuide"] as! Bool == true{
+                            self.guidingSwitch.isHidden = false
+                        }else{
+                            PFUser.current()!["isGuiding"] = false
+                            self.findGuideButton.backgroundColor = UIColor.black
+                            self.findGuideButton.setTitle("Find a Guide", for: .normal)
+                        }
                     }
-                    
+
                 }
-                
-                
+
+
             }
-            
+
         })
         
         locationButton.layer.cornerRadius = 10
@@ -240,20 +265,6 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
         }
         
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        
-        //we'll use this as a quick tutorial for new users eventually
-        
-        /*
-        if newUser == "yes" {
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "popup") as! USERPopupVC
-            vc.modalPresentationStyle = .overFullScreen
-            vc.modalTransitionStyle = .crossDissolve
-            self.present(vc, animated: true, completion: nil)
-            
-        } */
-        
     }
     
     //here is a function that can take that array, and loops through each element and adds it as an annotation to the mapView
@@ -290,25 +301,6 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINav
             return nil
             
         }
-            /*
-            let pinIdent = "Pin"
-            
-            var pinView: MKPinAnnotationView
-            
-            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdent) as? MKPinAnnotationView {
-                dequeuedView.annotation = annotation
-                
-                pinView = dequeuedView
-                
-            } else {
-                
-                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdent)
-                
-            }
-            
-            return pinView
-        }
- */
         
         let reuseId = "pin"
         if #available(iOS 11.0, *) {

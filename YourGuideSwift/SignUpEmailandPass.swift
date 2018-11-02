@@ -56,6 +56,7 @@ class SignUpEmailandPass: UIViewController {
             user.email = emailTextField.text
             user.username = phone
             user.password = passwordTextField.text
+            user["isGuide"] = false
             user.signUpInBackground(block: { (success, error) in
                 
                 self.activityIndicator.stopAnimating()
